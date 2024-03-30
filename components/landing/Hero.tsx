@@ -10,7 +10,7 @@ export default function Hero() {
             <h1 className="mb-6 text-[30px] font-bold leading-[1.2] sm:text-[40px] lg:text-[60px]">
               Unleash Your Sales Potential with{" "}
               <span className="inline-block text-transparent bg-gradient-to-r from-gray-700 via-cyan-400 to-orange-400 bg-clip-text">
-                Sales Fam
+                Client Management
               </span>
             </h1>
             <p className="mb-2 text-lg text-[#4F4F4F]">

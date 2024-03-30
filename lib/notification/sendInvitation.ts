@@ -9,7 +9,7 @@ export async function sendInvitation(
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: "Sales Fam <noreplay@localhost:8000>",
+      from: "Client Management <noreplay@localhost:8000>",
       to: [`${email}`],
       subject: "clientManagement Invitation",
       name,

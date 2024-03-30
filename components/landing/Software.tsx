@@ -16,7 +16,7 @@ export default function Software() {
               Integration - 1 Dashboard
             </h2>
             <p className="max-w-[400px] text-lg text-[#4F4F4F]">
-              Join over 2,000 rapidly expanding brands leveraging Sales Fam to
+              Join over 2,000 rapidly expanding brands leveraging Client Management to
               accelerate growth through centralized data analysis and
               dissemination
             </p>
@@ -49,7 +49,7 @@ export default function Software() {
         <div className="grid items-center grid-cols-6 gap-5 pb-7">
           <div className="col-span-6 lg:col-span-2">
             <h2 className="text-center text-[30px] font-semibold leading-[1.3] sm:text-[34px] md:text-[45px] lg:text-left">
-              Features you get On sales Fam
+              Features you get On Client Management
             </h2>
           </div>
           <div className="col-span-6 lg:col-span-3">

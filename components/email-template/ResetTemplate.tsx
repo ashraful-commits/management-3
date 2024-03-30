@@ -50,7 +50,7 @@ export const PasswordResetRequest: React.FC<PasswordResetRequestProps> = ({
             team at {mainEmail} or by replying to this email.
           </Text>
           <Text style={closing}>Best regards,</Text>
-          <Text style={signature}>Sales Fam</Text>
+          <Text style={signature}>Client Management</Text>
           <Text style={footer}>© 2010-2024 {company}. All Rights Reserved</Text>
         </Section>
       </Container>

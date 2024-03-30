@@ -10,7 +10,7 @@ export async function sendRequest(
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: "Sales Fam <noreplay@localhost:8000>",
+      from: "Client Management <noreplay@localhost:8000>",
       to: [`${adminEmail}`],
       subject: "New company sign request project submited!",
       companyName,
