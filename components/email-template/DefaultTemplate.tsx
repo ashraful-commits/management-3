@@ -19,7 +19,7 @@ interface EmailPlaceholderProps {
   subject: string
 }
 
-const baseUrl = "http://salesfam.com"
+const baseUrl = "http://localhost:8000"
 
 export const DefaultTemplate = ({
   name,
@@ -28,44 +28,44 @@ export const DefaultTemplate = ({
 }: DefaultTemplate) => (
   <Html>
     <Head />
-    <Preview>Unleash Your Sales Potential with Sales Fam.</Preview>
+    <Preview> Your Management</Preview>
     <Body style={main}>
-      <Container style={container}>
+      <Container style={container-fluid}>
         <Img
           src={`${baseUrl}/logo.png`}
           width={120}
           height={60}
-          alt="Sales Fam"
+          alt="Management Fam"
         />
         <Heading style={heading}>{subject}</Heading>
         <Section style={body}>
           <Text style={paragraph}>
             Hello, <b>{name}</b> <br />
-            <b>{upseller}</b> would like you to join as a sales rep at SalesFam.
+            <b>{upseller}</b> would like you to join as a sales rep at Business.
             Please click on the accept button to accept the invitation.
           </Text>
           <Link
             style={link}
-            href="https://salesfam.com/invitation"
+            href="https://localhost:8000/invitation"
             target="_blank"
           >
             👉 Accept Invitation 👈
           </Link>
         </Section>
-        <Text style={paragraph}>SalesFam Team</Text>
+        <Text style={paragraph}>Business Team</Text>
         <Hr style={hr} />
         <Img
           src={`${baseUrl}/logo.png`}
           width={80}
           height={42}
-          alt="Sales Fam"
+          alt="Management Fam"
           style={{
             WebkitFilter: "grayscale(100%)",
             filter: "grayscale(100%)",
             margin: "20px 0",
           }}
         />
-        <Text style={footer}>Sales Fam</Text>
+        <Text style={footer}>Management Fam</Text>
         <Text style={footer}>2010-2024 All Rights Reserved</Text>
       </Container>
     </Body>

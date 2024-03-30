@@ -13,11 +13,11 @@ export default function ImageUpload() {
   const handleImageUpload = async () => {
     const formData = new FormData()
     formData.append("file", image)
-    formData.append("upload_preset", "p2y46g7e")
+    formData.append("upload_preset", "shop_api")
 
     try {
       const response = await fetch(
-        `https://api.cloudinary.com/v1_1/drzedrk1e/image/upload`,
+        `https://api.cloudinary.com/v2/ds9mljkgj/image/upload`,
         {
           method: "POST",
           body: formData,

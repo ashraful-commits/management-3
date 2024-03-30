@@ -69,9 +69,11 @@ import Earnings from "./Earnings"
 import Statusbadge from "./statusBadge"
 import { useSession } from "next-auth/react"
 
-// const handleEditClick = (projectName) => {
-//   window.location.href = `/project/${projectName}/?edit=true`
-// }
+
+import ProjectEdit from "@/components/ProjectEdit"
+import ProjectInvoice from "@/components/ProjectInvoice"
+
+ 
 
 const handleRowClick = (projectName) => {
   window.location.href = `/project/${projectName}`
@@ -88,21 +90,10 @@ const columns: ColumnDef<Projects>[] = [
     cell: ({ row }) => (
       <div
         className="flex items-center font-semibold capitalize cursor-pointer text-primary"
-        onClick={() => handleRowClick(row.getValue("projectName"))}
+        
       >
-        {/* <span className="mr-3">{parseInt(row.id) + 1}</span> */}
-        <span className="w-6 mr-2">
-          <svg
-            viewBox="0 0 32 26"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M17.3825 4.33948L14.3154 1.00804C13.7253 0.368794 12.8894 0 12.0165 0H3.12246C1.39527 0 0 1.40142 0 3.12246V22.8775C0 24.5986 1.39527 26 3.12246 26H28.348C30.069 26 31.4704 24.6047 31.4704 22.8775V7.46194C31.4704 5.7409 30.0752 4.33948 28.348 4.33948H17.3825Z"
-              fill="#7495B5"
-            />
-          </svg>
-        </span>
+        
+       
         {row.getValue("projectName")}
       </div>
     ),
@@ -199,6 +190,31 @@ const columns: ColumnDef<Projects>[] = [
       </div>
     ),
   },
+  {
+    accessorKey: "action",
+    header: "Action",
+    cell: ({ row }) => (
+      <div>
+        <ul className="flex items-center justify-center [&>li]:mx-1 [&>li]:cursor-pointer">
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <li >
+                  <ProjectEdit slug={row.getValue("projectName")} />
+                  <ProjectInvoice slug={row.getValue("projectName")} />
+                </li>
+
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>View Details</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+          
+        </ul>
+      </div>
+    ),
+  },
 ]
 
 export default function DataTableSeller1(props) {
@@ -238,9 +254,9 @@ export default function DataTableSeller1(props) {
   })
 
   return (
-    <>
-      <div className="flex items-center py-4">
-        <div className="flex items-center w-4/12 gap-4">
+    <div className="w-full">
+      <div className="flex items-center justify-center w-full px-2 py-2 bg-orange-100 rounded-md gap-x-4">
+        <div className="flex items-center gap-4">
           <Select
             onValueChange={(value) =>
               table.getColumn("status")?.setFilterValue(value)
@@ -280,7 +296,7 @@ export default function DataTableSeller1(props) {
             </SelectContent>
           </Select>
         </div>
-        <div className="flex items-center justify-start w-4/12 px-2 bg-white border rounded-md">
+        <div className="flex items-center justify-start px-2 bg-white border rounded-md ">
         <Search className=" text-primary size-5" />
           <Input
             placeholder="Search..."
@@ -293,19 +309,11 @@ export default function DataTableSeller1(props) {
             className="w-full px-2 border-0 rounded-none"
           />
         </div>
-        <div className="flex justify-end w-4/12 gap-4">
-          <Button size="sm">
-            <Link className="flex items-center justify-end" href="/add-project">
-              <span className="mr-2">Add New Project </span>
-              <Plus className="size-4" />
-            </Link>
-          </Button>
-          <AddSalesrep upSellerId={id} upSeller={userName} />
-        </div>
+        
       </div>
-      <div>
+      <div className="w-full">
         <Table className="w-full border-separate dataTable caption-bottom border-spacing-y-2">
-          <TableHeader className="bg-transparent">
+          <TableHeader className="bg-green-100 ">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
@@ -327,7 +335,7 @@ export default function DataTableSeller1(props) {
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
                 <TableRow
-                  className="border-color-[#E9EFF4] mb-5 overflow-hidden rounded-md border shadow-md"
+                  className="border-color-[#E9EFF4] mb-5 overflow-hidden rounded-md border"
                   key={row.id}
                   data-state={row.getIsSelected()}
                 >
@@ -354,7 +362,7 @@ export default function DataTableSeller1(props) {
           </TableBody>
         </Table>
       </div>
-      <div className="flex items-center justify-end py-4 space-x-2">
+      {data?.length >10 &&    <div className="flex items-center justify-end py-4 space-x-2">
         <div className="flex-1 text-sm text-muted-foreground"></div>
         <div className="space-x-2">
           <Button
@@ -376,7 +384,7 @@ export default function DataTableSeller1(props) {
             Next
           </Button>
         </div>
-      </div>
-    </>
+      </div>}
+    </div>
   )
 }

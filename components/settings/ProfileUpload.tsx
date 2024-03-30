@@ -1,10 +1,10 @@
 "use client"
+
 import { useState } from "react"
 import { Check, X } from "lucide-react"
 import { useSession } from "next-auth/react"
-import {
-  Dialog
-} from "@/components/ui/dialog"
+
+import { Dialog } from "@/components/ui/dialog"
 import { useToast } from "@/components/ui/use-toast"
 import CropImage from "@/components/CropImage"
 
@@ -65,11 +65,11 @@ export default function ProfileUpload({ setAvatar }) {
     setLoading(true)
     const formData = new FormData()
     formData.append("file", image)
-    formData.append("upload_preset", "p2y46g7e")
+    formData.append("upload_preset", "shop_api")
 
     try {
       const response = await fetch(
-        `https://api.cloudinary.com/v1_1/drzedrk1e/image/upload`,
+        `https://api.cloudinary.com/v2/ds9mljkgj/image/upload`,
         {
           method: "POST",
           body: formData,
@@ -109,8 +109,8 @@ export default function ProfileUpload({ setAvatar }) {
                 <Check className="text-green-500" />
               </button>
             </div>
-          <CropImage file={src} setResult={setResult} />
-        </div>
+            <CropImage file={src} setResult={setResult} />
+          </div>
         </div>
       )}
       <div className="flex flex-col ml-4 cursor-pointer">
@@ -118,10 +118,12 @@ export default function ProfileUpload({ setAvatar }) {
           id="picture"
           className="mb-2 cursor-pointer"
           type="file"
-          onClick={(e)=>{e.target.value=null}}
+          onClick={(e) => {
+            e.target.value = null
+          }}
           onChange={handleImageChange}
         />
-        <Button disabled={!image &&true} onClick={handleImageUpload}>
+        <Button disabled={!image && true} onClick={handleImageUpload}>
           {isLoading && <Icons.spinner className="mr-2 size-4 animate-spin" />}
           Upload Image
         </Button>

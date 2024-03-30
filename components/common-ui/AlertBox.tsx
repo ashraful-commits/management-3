@@ -9,7 +9,7 @@ export default function AlertBox(props) {
   return (
     <>
       {showAlert && pendingProject && (
-        <Alert className="mb-10 mt-4 bg-[#E7FBF0] shadow-md">
+        <Alert className="w-full mt-2 mb-4 bg-orange-400 shadow-md">
           <Info className="color-black size-4" />
           <AlertTitle className="flex items-center justify-between">
             You have {pendingProject.length} project pending for approval...

@@ -7,9 +7,9 @@ export default function Software() {
       className="software_wrap pb-[60px] pt-[70px] sm:pt-[100px] md:py-[100px]"
       id="solution"
     >
-      <div className="container mx-auto px-5">
+      <div className="px-5 mx-auto container-fluid luid">
         {/* top start*/}
-        <div className="grid grid-cols-10 items-center gap-4 pb-7">
+        <div className="grid items-center grid-cols-10 gap-4 pb-7">
           <div className="col-span-10 md:col-span-6">
             <h2 className="mb-10 pr-[0px] text-[30px] font-semibold leading-[1.3] sm:text-[34px] md:text-[45px] xl:pr-[150px]">
               Multiple Software <br />
@@ -40,13 +40,13 @@ export default function Software() {
             </ul>
           </div>
           {/* Right side */}
-          <div className="col-span-10 mt-5 pl-0 text-center md:col-span-4 md:mt-0 lg:pl-7">
+          <div className="col-span-10 pl-0 mt-5 text-center md:col-span-4 md:mt-0 lg:pl-7">
             <img className="inline-block" src="./landing/sales_fam.svg" />
           </div>
         </div>
         {/* top End */}
         {/* mid start */}
-        <div className="grid grid-cols-6 items-center gap-5 pb-7">
+        <div className="grid items-center grid-cols-6 gap-5 pb-7">
           <div className="col-span-6 lg:col-span-2">
             <h2 className="text-center text-[30px] font-semibold leading-[1.3] sm:text-[34px] md:text-[45px] lg:text-left">
               Features you get On sales Fam
@@ -68,7 +68,7 @@ export default function Software() {
           </div>
         </div>
         {/* mid end */}
-        <div className="mt-5 grid grid-cols-6 gap-5">
+        <div className="grid grid-cols-6 gap-5 mt-5">
           <div className="col-span-6 mt-5 sm:col-span-2">
             <img
               className="w-full rounded-2xl"

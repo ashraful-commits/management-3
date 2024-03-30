@@ -18,6 +18,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Calendar } from "@/components/ui/calendar"
 import { Checkbox } from "@/components/ui/checkbox"
+import { Skeleton } from "@/components/ui/skeleton"
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -132,7 +133,15 @@ export default function Editinvoice(props) {
   }
 
   if (!defaultData) {
-    return "loading..."
+    return <div className="flex flex-col gap-y-2">
+      <Skeleton className="w-full h-10 bg-gray-100"/>
+      <Skeleton className="w-full h-10 bg-gray-100"/>
+      <Skeleton className="w-full h-10 bg-gray-100"/>
+      <Skeleton className="w-full h-10 bg-gray-100"/>
+      <Skeleton className="w-full h-10 bg-gray-100"/>
+      <Skeleton className="w-full h-10 bg-gray-100"/>
+      <Skeleton className="w-full h-10 bg-gray-100"/>
+    </div>
   }
 
   return (

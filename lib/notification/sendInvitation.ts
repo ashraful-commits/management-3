@@ -9,9 +9,9 @@ export async function sendInvitation(
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: "Sales Fam <noreplay@salesfam.com>",
+      from: "Sales Fam <noreplay@localhost:8000>",
       to: [`${email}`],
-      subject: "SalesFam Invitation",
+      subject: "clientManagement Invitation",
       name,
       upseller,
     }),

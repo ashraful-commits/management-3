@@ -4,7 +4,7 @@ import { Skeleton } from "@/components/ui/skeleton"
 
 const CompanySkeleton = () => {
   return (
-    <div className="container w-full h-full">
+    <div className="w-full h-full container-fluid luid">
       <Skeleton className="w-full bg-white h-[250px] flex justify-between items-center p-5">
         <div className="flex h-full gap-x-2">
           <Skeleton className="bg-gray-100 w-[220px] h-[220px]" />

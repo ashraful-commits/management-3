@@ -4,9 +4,9 @@ export default function Clients() {
   return (
     <div
       className="clients_wrap bg-[url('./../public/landing/client_bg.png')] bg-cover bg-[0px_0px]"
-      id="why-salesfam"
+      id="why-clientManagement"
     >
-      <div className="container px-5 mx-auto">
+      <div className="container-fluid  px-5 mx-auto">
         <div className="grid items-center grid-cols-10 gap-4 pb-10 client_inner">
           <div className="flex col-span-10 lg:col-span-3">
             <h3 className="w-[100%] text-center text-[26px] font-semibold leading-[1.3] text-[#001A32] lg:w-[350px] lg:text-left ">

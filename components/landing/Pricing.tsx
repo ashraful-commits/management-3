@@ -11,7 +11,7 @@ export default function Pricing() {
 
   return (
     <div className="pricing_wrap pb-[50px] pt-[40px] md:pt-[50px]" id="pricing">
-      <div className="container px-5 mx-auto">
+      <div className="mx-auto container-fluidpx-5">
         <div className="pt-8 pb-7">
           <div className="col-span-10 pr-[0px] font-medium lg:col-span-5">
             <p className="border-1 mx-auto w-[150px] rounded-2xl border border-[#ddd] py-1 text-center text-sm font-bold text-[#267596]">
@@ -100,7 +100,7 @@ export default function Pricing() {
                     </span>
                   </h3>
                   <a
-                    className="shadow-[0_10px_60px_-15px_rgba(0,0,0,0.3) mb-7 mt-3 block  rounded-3xl border bg-primary px-6 py-3 text-center text-sm font-semibold text-[#fff] transition duration-300 hover:bg-[#267596] hover:text-[#fff] lg:mt-5"
+                    className="shadow-[0_10px_60px_-15px_rgba(0,0,0,0.3) mb-7 mt-3 block  rounded-3xl border bg-orange-500 px-6 py-3 text-center text-sm font-semibold text-[#fff] transition duration-300 hover:bg-[#267596] hover:text-[#fff] lg:mt-5"
                     href="#"
                   >
                     Get Started

@@ -53,7 +53,7 @@ export default function SignContract(props) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: "Sales Fam <noreplay@salesfam.com>",
+          from: "Client management <noreplay@localhost:8000>",
           to: AdminEmail,
           subject: "Sign contract request submitted!",
           companyName,
@@ -89,7 +89,7 @@ export default function SignContract(props) {
     <>
       <Dialog>
         <DialogTrigger>
-          <div className="px-5 py-1 text-xs text-white duration-500 rounded-sm bg-primary hover:bg-black">
+          <div className="px-5 py-1 text-xs text-white duration-500 rounded-sm bg-orange-500 hover:bg-black">
             Sign Contract
           </div>
         </DialogTrigger>

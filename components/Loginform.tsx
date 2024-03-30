@@ -41,7 +41,7 @@ export function Loginform() {
         setLoading(false)
         return
       }
-      router.replace("dashboard")
+      router.replace("/")
     } catch (error) {
       setLoading(false)
       toast({
@@ -54,14 +54,15 @@ export function Loginform() {
   }
 
   return (
-    <div className="grid gap-6">
+    <div className="grid gap-6 sm:w-[350px] w-[500px] border p-4 rounded-2xl">
       <form onSubmit={handleSubmit}>
-        <div className="grid gap-2">
+        <div className="grid gap-y-6">
           <div className="grid gap-1">
             <Label className="sr-only" htmlFor="email">
               Email
             </Label>
             <Input
+              className="bg-transparent"
               onChange={(e) => setEmail(e.target.value)}
               placeholder="name@example.com"
               type="email"
@@ -75,6 +76,7 @@ export function Loginform() {
               Password
             </Label>
             <Input
+              className="bg-transparent"
               onChange={(e) => setPassword(e.target.value)}
               type="password"
               placeholder="Passowrd"

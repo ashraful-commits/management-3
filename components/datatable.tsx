@@ -2,7 +2,7 @@
 import { ArrowLeft ,ArrowRight   } from 'lucide-react';
 
 
-import  React,{useState} from "react"
+import  React,{useState,useEffect} from "react"
 import Image from "next/image"
 import Link from "next/link"
 import {
@@ -42,6 +42,9 @@ import {
 } from "@/components/ui/alert-dialog"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import ProjectEdit from "@/components/ProjectEdit"
+import ProjectInvoice from "@/components/ProjectInvoice"
+
 
 import { ScrollArea } from "@/components/ui/scroll-area"
 import {
@@ -71,10 +74,9 @@ import AddSalesrep from "./AddSalesrep"
 import CompanyLogo from "./CompanyLogo"
 import Earnings from "./Earnings"
 import Statusbadge from "./statusBadge"
+import TableSkeletons from './skeleton/TableSkeleton';
 
-// const handleEditClick = (projectName) => {
-//   window.location.href = `/project/${projectName}/?edit=true`
-// }
+
 
 const handleRowClick = (projectName) => {
   window.location.href = `/project/${encodeURIComponent(projectName)}`
@@ -91,21 +93,9 @@ const columns: ColumnDef<Projects>[] = [
     cell: ({ row }) => (
       <div
         className="flex items-center font-semibold capitalize cursor-pointer text-primary"
-        onClick={() => handleRowClick(row.getValue("projectName"))}
+        
       >
-        {/* <span className="mr-3">{parseInt(row.id) + 1}</span> */}
-        <span className="w-6 mr-2">
-          <svg
-            viewBox="0 0 32 26"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M17.3825 4.33948L14.3154 1.00804C13.7253 0.368794 12.8894 0 12.0165 0H3.12246C1.39527 0 0 1.40142 0 3.12246V22.8775C0 24.5986 1.39527 26 3.12246 26H28.348C30.069 26 31.4704 24.6047 31.4704 22.8775V7.46194C31.4704 5.7409 30.0752 4.33948 28.348 4.33948H17.3825Z"
-              fill="#7495B5"
-            />
-          </svg>
-        </span>
+ 
         {row.getValue("projectName")}
       </div>
     ),
@@ -221,8 +211,9 @@ const columns: ColumnDef<Projects>[] = [
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
-                <li onClick={() => handleRowClick(row.getValue("projectName"))}>
-                  <ExternalLink className="w-[20px] text-blue-500" />
+                <li >
+                  <ProjectEdit slug={row.getValue("projectName")} />
+                  <ProjectInvoice slug={row.getValue("projectName")} />
                 </li>
               </TooltipTrigger>
               <TooltipContent>
@@ -293,10 +284,14 @@ const columns: ColumnDef<Projects>[] = [
 export default function DataTable(props) {
   const { data: session } = useSession()
   const role = session?.user?.role
-  const data = props.projects
+  
+
   const Allcompanies = props.Allcompanies
   const userName = props.userName
+  const data = props.projects
   const id = props.id
+  const [loading,setLoading] = useState(true)
+  const [model,setModel] = useState(false)
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
@@ -324,13 +319,19 @@ export default function DataTable(props) {
     },
   })
 
+  useEffect(()=>{
+setTimeout(()=>{
+  setLoading(false)
+},2000)
+  },[])
   return (
     <>
-      <div className="flex items-center py-4">
-        <div className="flex items-center w-4/12 gap-4">
+ 
+      <div className="flex items-center w-full px-2 py-2 my-5 bg-orange-200 rounded-md ">
+        <div className="flex items-center w-4/12 gap-4 ">
           <Select
             onValueChange={(value) =>
-              table.getColumn("status")?.setFilterValue(value)
+              table?.getColumn("status")?.setFilterValue(value)
             }
           >
             <SelectTrigger className="w-[180px] text-black text-md">
@@ -350,7 +351,7 @@ export default function DataTable(props) {
             (role == "SuperAdmin" && (
               <Select
                 onValueChange={(value) =>
-                  table.getColumn("companyName")?.setFilterValue(value)
+                  table?.getColumn("companyName")?.setFilterValue(value)
                 }
               >
                 <SelectTrigger className="w-[180px] text-black text-md">
@@ -378,10 +379,10 @@ export default function DataTable(props) {
           <Input
             placeholder="Search..."
             value={
-              (table.getColumn("projectName")?.getFilterValue() as string) ?? ""
+              (table?.getColumn("projectName")?.getFilterValue() as string) ?? ""
             }
             onChange={(event) =>
-              table.getColumn("projectName")?.setFilterValue(event.target.value)
+              table?.getColumn("projectName")?.setFilterValue(event.target.value)
             }
             className="w-full border-0"
           />
@@ -396,9 +397,9 @@ export default function DataTable(props) {
           {/* <AddSalesrep upSellerId={id} upSeller={userName} /> */}
         </div>
       </div>
-      <div>
-        <Table className="w-full border-separate dataTable caption-bottom border-spacing-y-2">
-          <TableHeader className="bg-transparent">
+      <div className="w-full rounded-md">
+        <Table className="w-full rounded-md dataTable caption-bottom">
+          <TableHeader className="w-full bg-green-100 ">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
@@ -416,11 +417,17 @@ export default function DataTable(props) {
               </TableRow>
             ))}
           </TableHeader>
-          <TableBody>
-            {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map((row) => (
+          <TableBody className="w-full">
+          {loading &&  <TableRow>
+          <TableCell colSpan={columns.length}>
+           <TableSkeletons/>
+          </TableCell>
+          </TableRow>
+           }
+            {!loading &&table?.getRowModel().rows?.length ? (
+              table?.getRowModel().rows.map((row) => (
                 <TableRow
-                  className="border-color-[#E9EFF4] mb-5 overflow-hidden rounded-md border shadow-md"
+                  className="mb-5 overflow-hidden "
                   key={row.id}
                   data-state={row.getIsSelected()}
                 >
@@ -436,18 +443,19 @@ export default function DataTable(props) {
               ))
             ) : (
               <TableRow>
-                <TableCell
+               {!loading  && <TableCell
                   colSpan={columns.length}
                   className="h-24 text-center"
                 >
                   No results.
-                </TableCell>
+                </TableCell>}
               </TableRow>
             )}
           </TableBody>
         </Table>
       </div>
-      <div className="flex items-center justify-end py-4 space-x-2">
+      {data?.length>10 &&
+      <div className="flex items-center justify-end w-full py-4 space-x-2">
         <div className="flex-1 text-sm text-muted-foreground"></div>
         <div className="space-x-2">
           <Button
@@ -455,7 +463,7 @@ export default function DataTable(props) {
             className="w-[100px] "
             size="sm"
             onClick={() => table.previousPage()}
-            disabled={!table.getCanPreviousPage()}
+            disabled={!table?.getCanPreviousPage()}
           >
             Previous
           </Button>
@@ -464,13 +472,14 @@ export default function DataTable(props) {
             className="w-[100px] "
             size="sm"
             onClick={() => table.nextPage()}
-            disabled={!table.getCanNextPage()}
+            disabled={!table?.getCanNextPage()}
           >
             Next
           </Button>
        
         </div>
       </div>
+      }
     </>
   )
 }

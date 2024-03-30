@@ -2,7 +2,7 @@
 
 import React, { useState } from "react"
 import { useRouter } from "next/navigation"
-import { FilePlus2 } from "lucide-react"
+import { Youtube  } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -59,20 +59,20 @@ export default function AddMeeting() {
     <form className="flex gap-6" onSubmit={handleSubmit}>
       <Input
         type="text"
-        placeholder="Youtube Video id"
+        placeholder="Video id"
         onChange={(e) => setvideoId(e.target.value)}
         required
       />
       <Input
         type="text"
-        placeholder="Video title here"
+        placeholder="Video title"
         onChange={(e) => setVideoTitle(e.target.value)}
         required
       />
-      <Button className="px-10 flex items-center min-w-[200px]">
+      <Button className="flex items-center px-4">
         {isLoading && <Icons.spinner className="size-4 animate-spin" />}
-        {!isLoading && <FilePlus2 size={20} />}
-        <span className="inline-block ml-2">Add Video</span>
+        {!isLoading && <Youtube  size={20} />}
+        <span className="inline-block w-20 ml-2">Add Video</span>
       </Button>
     </form>
   )

@@ -14,5 +14,5 @@ export default function Earnings(props) {
         console.error("Error:", error)
       })
   }, [projectId])
-  return <div>{data && "$" + data}</div>
+  return <div className="">{data && "$" + data}</div>
 }

@@ -24,18 +24,18 @@ export function middleware(req) {
 
   if (isPublicPath) {
     if (token) {
-      return NextResponse.redirect(new URL("/dashboard", req.nextUrl))
+      return NextResponse.redirect(new URL("/", req.nextUrl))
     }
   } else {
     if (!token) {
-      return NextResponse.redirect(new URL("/", req.nextUrl))
+      return NextResponse.redirect(new URL("/login", req.nextUrl))
     }
   }
 }
 
 export const config = {
   matcher: [
-    "/dashboard",
+    "/",
     "/login",
     "/signup",
     "/project",

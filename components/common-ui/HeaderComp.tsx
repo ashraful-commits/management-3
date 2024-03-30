@@ -10,14 +10,14 @@ export default function HeaderComp() {
   const pathname = usePathname()
 
   if (
-    pathname !== "/" &&
+
     pathname !== "/signup" &&
-    pathname !== "/login" &&
-    pathname != "/invitation"
+    pathname !== "/login"
+    
   ) {
     Headercomp = <Header />
   } else {
     Headercomp = ""
   }
-  return <>{Headercomp}</>
+  return <div className="sticky top-0 left-0 px-4 bg-green-100 z-[999999]">{Headercomp}</div>
 }

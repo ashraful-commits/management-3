@@ -9,7 +9,7 @@ export async function sendAdminNotification(
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: "Sales Fam <noreplay@salesfam.com>",
+      from: "Sales Fam <noreplay@localhost:8000>",
       to: [`${adminEmail}`],
       subject: "New project submited!",
       projectName,
@@ -36,7 +36,7 @@ export async function sendUserNotification(
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: "Sales Fam <noreplay@salesfam.com>",
+      from: "Sales Fam <noreplay@localhost:8000>",
       to: [`${salesPersonEmail}`],
       subject: "You submited a new project!",
       projectName,

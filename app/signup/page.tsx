@@ -13,39 +13,42 @@ import { authOptions } from "../api/auth/[...nextauth]/route"
 export default async function SignupPage() {
   const session = await getServerSession(authOptions)
 
-  if (session) redirect("/dashboard")
+  if (session) redirect("/")
 
   return (
     <>
-      <div className="container relative min-w-[1400px] flex-col items-center justify-center hidden h-screen md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
-        <Link
-          href="/login"
-          className={cn(
-            buttonVariants({ variant: "outline" }),
-            "absolute right-4 top-4 hover:bg-primary hover:text-white md:right-8 md:top-8"
-          )}
-        >
-          Login
-        </Link>
-        <div className="relative flex-col hidden h-full p-10 text-white bg-muted dark:border-r lg:flex">
-          <div className="absolute inset-0 bg-white" />
-          <div className="relative z-20 mt-auto">
-            <Link href="/">
-              <Image src="/logo.png" alt="Logo" width="150" height="102" />
-            </Link>
-          </div>
-        </div>
-        <div className="lg:p-8">
+      <div className="relative flex items-center justify-center min-h-[88vh] min-w-full ">
+        <div className="flex items-center justify-center ">
           <div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
+            <div className="relative z-20 mx-auto my-10">
+              <Link href="/">
+                <Image
+                  className="w-20 h-20 rounded-full"
+                  src="/logo.jpg"
+                  alt="Logo"
+                  width="150"
+                  height="102"
+                />
+              </Link>
+            </div>
             <div className="flex flex-col space-y-2 text-center">
-              <h1 className="text-2xl font-semibold tracking-tight">
-                Create an Account
+              <h1 className="text-[25px] font-semibold tracking-tight">
+                Create an Business account
               </h1>
               <p className="text-sm text-muted-foreground">
-                Enter your details below to create your account
+                Enter your details below to create your Business account
               </p>
             </div>
             <Signinform />
+            <div className="flex items-center justify-center gap-x-2">
+              Already have an account?
+              <Link
+                href="/login"
+                className={cn(" hover:text-white md:right-8 md:top-8")}
+              >
+                Login
+              </Link>
+            </div>
           </div>
         </div>
       </div>

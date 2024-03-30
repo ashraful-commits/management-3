@@ -20,5 +20,5 @@ export default function UpsellerCommission(props) {
        
   }, [id])
 
-  return <div>{commission?formatNumber(commission?.toFixed(1)):0}</div>
+  return <div className="border rounded-md flex justify-center items-center">{commission?formatNumber(commission?.toFixed(1)):0}</div>
 }

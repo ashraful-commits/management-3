@@ -19,7 +19,7 @@ interface EmailPlaceholderProps {
   subject: string
 }
 
-const baseUrl = "http://salesfam.com"
+const baseUrl = "http://localhost:8000"
 
 export const EmailPlaceholder = ({
   projectName,
@@ -28,14 +28,14 @@ export const EmailPlaceholder = ({
 }: EmailPlaceholderProps) => (
   <Html>
     <Head />
-    <Preview>Unleash Your Sales Potential with Sales Fam.</Preview>
+    <Preview>Unleash Your Business Potential with Business Fam.</Preview>
     <Body style={main}>
-      <Container style={container}>
+      <Container style={container-fluid}>
         <Img
           src={`${baseUrl}/logo.png`}
           width={120}
           height={60}
-          alt="Sales Fam"
+          alt="Business Fam"
         />
         <Heading style={heading}>{subject}</Heading>
         <Section style={body}>
@@ -45,20 +45,20 @@ export const EmailPlaceholder = ({
           </Text>
           <Text style={paragraph}>Please review it.</Text>
         </Section>
-        <Text style={paragraph}>SalesFam Team</Text>
+        <Text style={paragraph}>Business Team</Text>
         <Hr style={hr} />
         <Img
           src={`${baseUrl}/logo.png`}
           width={80}
           height={42}
-          alt="Sales Fam"
+          alt="Business Fam"
           style={{
             WebkitFilter: "grayscale(100%)",
             filter: "grayscale(100%)",
             margin: "20px 0",
           }}
         />
-        <Text style={footer}>Sales Fam</Text>
+        <Text style={footer}>Business Fam</Text>
         <Text style={footer}>2010-2024 All Rights Reserved</Text>
       </Container>
     </Body>

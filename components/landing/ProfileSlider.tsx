@@ -17,19 +17,19 @@ const sliderData = [
     avatar: "./slider_profile_1.png",
     designation: "Founder & CEO",
     content:
-      "Incredible efficiency boost! Our team's productivity skyrocketed since we started using SalesFam’s SaaS solution. Seamless integration and intuitive features make our workflow a breeze.",
+      "Incredible efficiency boost! Our team's productivity skyrocketed since we started using Client Mangement’s SaaS solution. Seamless integration and intuitive features make our workflow a breeze.",
     social: {
       fb: "https://facebook.com",
       tw: "https://twitter.com",
       ln: "https://linkedin.com",
     },
   },
-  {
+  {1
     name: "Emma Smith",
     avatar: "./slider_profile_2.png",
     designation: "Founder & CEO",
     content:
-      "Game-changer for our business! With this SalesFam SaaS platform, we've streamlined our operations and gained valuable insights. Highly recommend for anyone seeking to scale up effortlessly.",
+      "Game-changer for our business! With this clientManagement SaaS platform, we've streamlined our operations and gained valuable insights. Highly recommend for anyone seeking to scale up effortlessly.",
     social: {
       fb: "https://facebook.com",
       tw: "https://twitter.com",
@@ -41,7 +41,7 @@ const sliderData = [
     avatar: "./slider_profile_3.png",
     designation: "Founder & CEO",
     content:
-      "Top-notch support and results! From onboarding to ongoing assistance, the team behind the SalesFam SaaS has been phenomenal. Our ROI has exceeded expectations, thanks to their innovative approach.",
+      "Top-notch support and results! From onboarding to ongoing assistance, the team behind the clientManagement SaaS has been phenomenal. Our ROI has exceeded expectations, thanks to their innovative approach.",
     social: {
       fb: "https://facebook.com",
       tw: "https://twitter.com",
@@ -53,7 +53,7 @@ const sliderData = [
     avatar: "./slider_profile_4.png",
     designation: "Founder & CEO",
     content:
-      "Incredible efficiency boost! Our team's productivity skyrocketed since we started using SalesFam’s SaaS solution. Seamless integration and intuitive features make our workflow a breeze.",
+      "Incredible efficiency boost! Our team's productivity skyrocketed since we started using clientManagement’s SaaS solution. Seamless integration and intuitive features make our workflow a breeze.",
     social: {
       fb: "https://facebook.com",
       tw: "https://twitter.com",
@@ -65,7 +65,7 @@ const sliderData = [
     avatar: "./slider_profile_1.png",
     designation: "Founder & CEO",
     content:
-      "Game-changer for our business! With this SalesFam SaaS platform, we've streamlined our operations and gained valuable insights. Highly recommend for anyone seeking to scale up effortlessly.",
+      "Game-changer for our business! With this clientManagement SaaS platform, we've streamlined our operations and gained valuable insights. Highly recommend for anyone seeking to scale up effortlessly.",
     social: {
       fb: "https://facebook.com",
       tw: "https://twitter.com",
@@ -77,7 +77,7 @@ const sliderData = [
     avatar: "./slider_profile_2.png",
     designation: "Founder & CEO",
     content:
-      "Top-notch support and results! From onboarding to ongoing assistance, the team behind the SalesFam SaaS has been phenomenal. Our ROI has exceeded expectations, thanks to their innovative approach.",
+      "Top-notch support and results! From onboarding to ongoing assistance, the team behind the clientManagement SaaS has been phenomenal. Our ROI has exceeded expectations, thanks to their innovative approach.",
     social: {
       fb: "https://facebook.com",
       tw: "https://twitter.com",
@@ -89,7 +89,7 @@ const sliderData = [
     avatar: "./slider_profile_3.png",
     designation: "Founder & CEO",
     content:
-      "Incredible efficiency boost! Our team's productivity skyrocketed since we started using SalesFam’s SaaS solution. Seamless integration and intuitive features make our workflow a breeze.",
+      "Incredible efficiency boost! Our team's productivity skyrocketed since we started using clientManagement’s SaaS solution. Seamless integration and intuitive features make our workflow a breeze.",
     social: {
       fb: "https://facebook.com",
       tw: "https://twitter.com",
@@ -101,7 +101,7 @@ const sliderData = [
     avatar: "./slider_profile_4.png",
     designation: "Founder & CEO",
     content:
-      "Game-changer for our business! With this SalesFam SaaS platform, we've streamlined our operations and gained valuable insights. Highly recommend for anyone seeking to scale up effortlessly.",
+      "Game-changer for our business! With this clientManagement SaaS platform, we've streamlined our operations and gained valuable insights. Highly recommend for anyone seeking to scale up effortlessly.",
     social: {
       fb: "https://facebook.com",
       tw: "https://twitter.com",
@@ -113,7 +113,7 @@ const sliderData = [
     avatar: "./slider_profile_4.png",
     designation: "Founder & CEO",
     content:
-      "Top-notch support and results! From onboarding to ongoing assistance, the team behind the SalesFam SaaS has been phenomenal. Our ROI has exceeded expectations, thanks to their innovative approach.",
+      "Top-notch support and results! From onboarding to ongoing assistance, the team behind the clientManagement SaaS has been phenomenal. Our ROI has exceeded expectations, thanks to their innovative approach.",
     social: {
       fb: "https://facebook.com",
       tw: "https://twitter.com",
@@ -126,8 +126,8 @@ export default function ProfileSlider() {
   return (
     <>
       <div className="prifile_wrap overflow-hidden bg-[#FBFCFD] pb-[100px] pt-[40px] md:pt-[50px]">
-        <div className="container mx-auto px-5">
-          <div className="grid grid-cols-6 items-center gap-5 pb-10">
+        <div className="px-5 mx-auto container-fluid luid">
+          <div className="grid items-center grid-cols-6 gap-5 pb-10">
             <div className="col-span-6 lg:col-span-2">
               <h2 className="text-center text-[30px] font-semibold leading-[1.3] sm:text-[34px] md:text-[45px] lg:text-left">
                 Testimonials
@@ -191,7 +191,7 @@ export default function ProfileSlider() {
                         {singleSlider.designation}
                       </p>
                       <p className="text-[#7C878E]">{singleSlider.content}</p>
-                      <ul className="mt-5 flex gap-4">
+                      <ul className="flex gap-4 mt-5">
                         <li>
                           <Link href={singleSlider.social.fb}>
                             <img className="w-[30px]" src="./facebook.svg" />

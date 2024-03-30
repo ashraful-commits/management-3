@@ -6,36 +6,17 @@ export default function CompanyLogo(props) {
   let company
 
   switch (companyName) {
-    case "WordSphere":
-      company = "/wordsphere.png"
+    case "company1":
+      company = "/logo.jpg"
       break
-    case "moglixy media":
-      company = "/moglixy.png"
-      break
-    case "image appeal":
-      company = "/Image_appeal.png"
-      break
-    case "pixel voyage":
-      company = "/pixel_voyage.jpg"
-      break
-    case "SymbolSense":
-      company = "/pixel_voyage.jpg"
-      break
-    case "zordel":
-      company = "/zordel.png"
-      break
-    case "may levy":
-      company = "/maylevy.png.jpg"
-      break
-    case "cyberly":
-      company = "/cyberly.png"
+    case "company2":
+      company = "/ia.jpg"
       break
   }
 
-  // {if (companyName =='wordsphere') && <Image src="./logo.png" width={120} height={40}>}
   return (
     <div>
-      <Image src={company} width={110} height={20} alt="company logo" />
+      <Image src={company} width={30} height={30} alt="company logo" />
     </div>
   )
 }

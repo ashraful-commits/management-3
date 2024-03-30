@@ -1,27 +1,87 @@
-import Clients from "@/components/landing/Clients"
-import Help from "@/components/landing/Help"
-import Hero from "@/components/landing/Hero"
-import Pricing from "@/components/landing/Pricing"
-import ProfileSlider from "@/components/landing/ProfileSlider"
-import Software from "@/components/landing/Software"
-import Success from "@/components/landing/Success"
-import Footer from "@/components/landing/common/Footer"
-import Header from "@/components/landing/common/Header"
+"use client"
+import { useEffect } from "react"
+import { useSession } from "next-auth/react"
+import { fetchInvoices } from "@/lib/fetchInvoices"
+import { fetchProjects } from "@/lib/fetchProjects"
+import AuthProvider from "./"
+import SalesOne from "./SalesOne"
+import SalesTwo from "./SalesTwo"
+import SuperAdmin from "./SuperAdmin"
 
-export default async function IndexPage() {
+export default function DashboardPage() {
+  const { data: session } = useSession()
+  const role = session?.user?.role
+  const username = session?.user?.name
+
+  useEffect(() => {
+    if (session && role == "Sales2") {
+      fetchProjects()
+        .then((apiData) => {
+          if (apiData) {
+            const pendingProjects = apiData.filter(
+              (item) => item.status == "Pending" && item.salesPerson == username
+            )
+            const filteredData = apiData.filter(
+              (item) =>
+                item.status !== "Pending" && item.salesPerson == username
+            )
+
+            const completedproject = apiData.filter(
+              (item) =>
+                item.status == "Complete" && item.salesPerson == username
+            )
+
+            const uniqueClientNames = []
+
+            filteredData.forEach((item) => {
+              if (!uniqueClientNames.includes(item.clientName)) {
+                uniqueClientNames.push(item.clientName)
+              }
+            })
+
+            setcompletedproject(completedproject)
+            setclientName(uniqueClientNames)
+            setpendingProject(pendingProjects)
+            setData(filteredData)
+            setLoading(false)
+          }
+        })
+        .catch((error) => {
+          console.error("Error in component:", error)
+        })
+
+      fetchInvoices()
+        .then((invoiceData) => {
+          if (invoiceData) {
+            const earning = invoiceData.filter(
+              (item) =>
+                item.status == "Paid" &&
+                item.commission_paid == "Yes" &&
+                item.userId == session?.user?.id
+            )
+
+            const total = earning.reduce(
+              (total, item) => total + (item.amount / 100) * item.rate,
+              0
+            )
+
+            settotalEarn(total)
+          }
+        })
+        .catch((error) => {
+          console.error("Error in component:", error)
+        })
+    }
+  }, [session, role, username])
+
   return (
     <>
-    <div className="sticky top-0 z-[9999999999]">
-      <Header />
-    </div>
-      <Hero />
-      <Clients />
-      <Help />
-      <Software />
-      <Success />
-      <Pricing />
-      <ProfileSlider />
-      <Footer />
+      <div className="container-fluid mt-5 min-w-[1536px]">
+        {role == "SuperAdmin" && <SuperAdmin />}
+        {role == "Sales1" && <SalesOne />}
+        {role == "Sales2" && <SalesTwo />}
+      </div>
+      
     </>
   )
 }

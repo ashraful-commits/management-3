@@ -99,7 +99,7 @@ export default function SuperAdmin(props) {
             {userData && <SellerList users={userData} />}
           </TabsContent>
           <TabsContent value="projects">
-            <h4 className="container mt-10 block font-semibold text-black">
+            <h4 className="container-fluid  mt-10 block font-semibold text-black">
               Manage Projects
             </h4>
             <Datatable projects={data} />

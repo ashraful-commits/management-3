@@ -38,16 +38,6 @@ export default function UserNav() {
     }
   }, [session])
 
-  if (!session)
-    return (
-      <div className="flex items-center ml-4 space-x-1">
-        <Skeleton className="size-[40px] rounded-full border bg-[#fff]" />
-        <div className="ml-[8px] space-y-2">
-          <Skeleton className="h-4 w-[175px] border bg-[#fff]" />
-          <Skeleton className="h-3 w-[175px] border bg-[#fff]" />
-        </div>
-      </div>
-    )
 
   return (
     <>
@@ -63,16 +53,9 @@ export default function UserNav() {
                 src={avatar}
                 alt="avatar icon"
               />
-              <AvatarFallback className="bg-white">JF</AvatarFallback>
+              <AvatarFallback className="bg-white">{session?.user?.name?.split(" ")[0].split("")[0]}{session?.user?.name?.split(" ")[1].split("")[0]}</AvatarFallback>
             </Avatar>
-            <div className="flex flex-col ml-2 space-y-1">
-              <p className=" text-[13px] font-bold leading-none">
-                {session?.user?.name}
-              </p>
-              <p className="text-[13px] leading-none text-muted-foreground">
-                {session?.user?.email}
-              </p>
-            </div>
+            
             <span className="ml-2">
               <svg
                 width="10"
@@ -95,82 +78,18 @@ export default function UserNav() {
           forceMount
         >
           <DropdownMenuGroup>
-            <Link href="/settings">
+            <Link href="/profile">
               <DropdownMenuItem
                 className={`cursor-pointer  ${
-                  pathname === "/settings"
+                  pathname === "/profile"
                     ? "border-l-4 border-l-primary rounded-none bg-gray-100"
                     : ""
                 }`}
               >
-                Settings
+                Profile
               </DropdownMenuItem>
             </Link>
-            {role && role == "SuperAdmin" && (
-              <>
-                <Link href="/settings/manage-user">
-                  <DropdownMenuItem
-                    className={`cursor-pointer ${
-                      pathname === "/settings/manage-user"
-                        ? "border-l-4 border-l-primary rounded-none bg-gray-100"
-                        : ""
-                    }`}
-                  >
-                    Manage User
-                  </DropdownMenuItem>
-                </Link>
-                <Link href="/settings/manage-clients">
-                  <DropdownMenuItem
-                    className={`cursor-pointer ${
-                      pathname === "/settings/manage-clients"
-                        ? "border-l-4 border-l-primary rounded-none bg-gray-100"
-                        : ""
-                    }`}
-                  >
-                    Manage Clients
-                  </DropdownMenuItem>
-                </Link>
-                <Link href="/settings/manage-contracts">
-                  <DropdownMenuItem
-                    className={`cursor-pointer ${
-                      pathname === "/settings/manage-contracts"
-                        ? "border-l-4 border-l-primary rounded-none bg-gray-100"
-                        : ""
-                    }`}
-                  >
-                    Manage Contracts
-                  </DropdownMenuItem>
-                </Link>
-                <Link
-                  href="/settings/manage-companies"
-                  className={"cursor-pointer"}
-                >
-                  <DropdownMenuItem
-                    className={`cursor-pointer ${
-                      pathname === "/settings/manage-companies"
-                        ? "border-l-4 border-l-primary rounded-none bg-gray-100"
-                        : ""
-                    }`}
-                  >
-                    Manage Companies
-                  </DropdownMenuItem>
-                </Link>
-                <Link
-                  href="/settings/manage-meetings"
-                  className={"cursor-pointer"}
-                >
-                  <DropdownMenuItem
-                    className={`cursor-pointer ${
-                      pathname === "/settings/manage-meetings"
-                        ? "border-l-4 border-l-primary rounded-none bg-gray-100"
-                        : ""
-                    }`}
-                  >
-                    Manage Meetings
-                  </DropdownMenuItem>
-                </Link>
-              </>
-            )}
+           
           </DropdownMenuGroup>
           <DropdownMenuSeparator />
           <DropdownMenuItem

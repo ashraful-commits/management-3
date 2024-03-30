@@ -93,9 +93,9 @@ export default function Sales({ params }) {
   }, [name])
   return (
     <>
-      <div className="container relative z-0 min-w-[1400px]">
-        <div className="">
-          <div className="flex p-5 bg-white border rounded-md shadow-md min-h-32">
+      <div className="container-fluid  relative z-0 min-w-[1536px]">
+        <div className="my-5 bg-green-100 rounded-md">
+          <div className="flex p-5  border rounded-md min-h-32">
             {userDetails && (
               <>
                 <div className="w-3/12">
@@ -120,19 +120,19 @@ export default function Sales({ params }) {
                       )}
                     </div>
                     <div>
-                      <h1 className="text-2xl font-semibold capitalize">
+                      <h1 className="text-2xl text-black font-semibold capitalize">
                         {userDetails?.name}
                       </h1>
                       <h5 className="text-sm">{userDetails?.email}</h5>
                       <h5 className="text-sm">2193-13102939</h5>
                       {userDetails?.role == "Sales1" && (
-                        <div className="mt-2 inline-flex items-center rounded-full bg-yellow-200 px-2 py-1 text-[10px]">
+                        <div className="mt-2 inline-flex items-center rounded-full bg-yellow-500 px-2 py-1 text-[10px]">
                           <Crown size={10} />
                           <span className="ml-1">Level One Seller</span>
                         </div>
                       )}
                       {userDetails?.role == "Sales2" && (
-                        <div className="mt-2 inline-flex items-center rounded-full bg-green-200 px-2 py-1 text-[10px]">
+                        <div className="mt-2 inline-flex items-center rounded-full bg-green-500 px-2 py-1 text-[10px]">
                           <Trophy size={10} />
                           <span className="ml-1">Level Two Seller</span>
                         </div>
@@ -142,56 +142,53 @@ export default function Sales({ params }) {
                 </div>
                 <div className="flex items-center w-9/12 ">
                   <Separator orientation="vertical" />
-                  <div className="flex justify-between w-full ml-5 ">
+                  <div className="flex justify-between w-full ml-5 gap-x-4 ">
                     {userDetails &&
                       userDetails?.role == "Sales2" &&
                       userData &&
                       data && (
                         <>
-                          <div className="w-4/12 text-center">
-                            <h4>Earnings</h4>
-                            <h1 className="text-3xl font-semibold">
+                          <div className="w-4/12 bg-orange-500 h-28  rounded-md flex justify-center items-center flex-col text-center">
+                            <h4 className="text-lg font-bold text-white">Earnings</h4>
+                            <h1 className="text-3xl text-white font-semibold">
                               ${commission}
                             </h1>
                           </div>
-                          {/* <div className="w-4/12 text-center">
-                              <h4>Commission</h4>
-                              <h1 className="text-3xl font-semibold">
-                                {commission}
-                              </h1>
-                            </div> */}
-                          <div className="w-4/12 text-center">
-                            <h4>Clients</h4>
-                            <h1 className="text-3xl font-semibold">
+                        
+                          <div className="w-4/12 text-center bg-blue-500 h-28  rounded-md flex justify-center items-center flex-col ">
+                            <h4 className="text-lg font-bold text-white">Clients</h4>
+                            <h1 className="text-3xl text-white font-semibold">
                               {clients}
                             </h1>
                           </div>
-                          <div className="w-4/12 text-center">
-                            <h4>Projects</h4>
-                            <h1 className="text-3xl font-semibold">
+                          <div className="w-4/12 text-center bg-purple-500 h-28  rounded-md flex justify-center items-center flex-col ">
+                            <h4 className="text-lg font-bold text-white">Projects</h4>
+                            <h1 className="text-3xl text-white font-semibold">
                               {projects}
                             </h1>
                           </div>
                         </>
                       )}
 
-                    {userDetails && userDetails?.role == "Sales1" && (
+                    {userDetails && userDetails?.role == "Sales1" &&
+                      userData &&
+                      data && (
                       <>
-                        <div className="w-5/12 text-center">
-                          <h4>Sales Reps</h4>
-                          <h1 className="text-3xl font-semibold">
+                        <div className="w-5/12 text-center bg-blue-500 h-28  rounded-md flex justify-center items-center flex-col ">
+                          <h4 className="text-lg font-bold text-white">Sales Reps</h4>
+                          <h1 className="text-3xl text-white font-semibold">
                             <TotalSales userId={userDetails?._id} />
                           </h1>
                         </div>
-                        <div className="w-5/12 text-center">
-                          <h4> Earnings</h4>
-                          <h1 className="text-3xl font-semibold">
+                        <div className="w-5/12 text-center bg-purple-500 h-28  rounded-md flex justify-center items-center flex-col ">
+                          <h4 className="text-lg font-bold text-white"> Earnings</h4>
+                          <h1 className="text-3xl text-white font-semibold">
                             ${seller1earnings ? seller1earnings.toFixed(2) : 0}
                           </h1>
                         </div>
-                        <div className="w-5/12 text-center">
-                          <h4>Commission Earnings</h4>
-                          <h1 className="text-3xl font-semibold">
+                        <div className="w-5/12 text-center bg-orange-100 h-28  rounded-md flex justify-center items-center flex-col ">
+                          <h4 className="text-lg font-bold text-white">Commission Earnings</h4>
+                          <h1 className="text-3xl text-white font-semibold">
                             $
                             {seller1commission
                               ? seller1commission.toFixed(2)
@@ -208,16 +205,37 @@ export default function Sales({ params }) {
         </div>
 
         {!userDetails && !data && (
-          <div className="container absolute top-0 left-0 z-50 flex justify-center">
+          <div className="absolute top-0 left-0 z-50 flex justify-center container-fluid ">
             <Sales2Skeleton />
           </div>
         )}
-        {userDetails && userDetails.role == "Sales1" && userData && (
+        {userDetails && userDetails.role == "Sales1" && userData || data && (
           <>
-            <h1 className="mt-5 font-bold text-md text-primary">Projects</h1>
-            <DatatableSales projects={data} AllCompanies={AllCompanies} />
-            <h1 className="font-bold text-md text-primary">Sales Rep</h1>
-            <SalesTable sales={userData} />
+          <Tabs
+          defaultValue="projects"
+          className="w-full p-2 rounded-md "
+        >
+          <div className="flex items-center justify-between w-full">
+            <TabsList className="p-1.5 border  bg-green-100 w-[280px]">
+              <TabsTrigger value="projects" className="p-1.5">
+                <span className="w-[120px] font-semibold"> Projects</span>
+              </TabsTrigger>
+              <TabsTrigger value="SalesRep" className="p-1.5">
+                <span className="w-[120px] font-semibold"> Sales Rep</span>
+              </TabsTrigger>
+          
+            </TabsList>
+          </div>
+          <TabsContent value="projects">
+          <DatatableSales projects={data} AllCompanies={AllCompanies} />
+          </TabsContent>
+          <TabsContent value="SalesRep">      
+          <SalesTable sales={userData} />
+          </TabsContent>
+          
+       
+        </Tabs>
+
           </>
         )}
         {userDetails && userDetails.role == "Sales2" && data && (

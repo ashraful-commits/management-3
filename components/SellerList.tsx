@@ -57,9 +57,9 @@ export default function SellerList(props) {
   return (
     <>
       <div className="mt-4">
-        <div className="flex items-center justify-between">
-          <div className="w-5/12">
-            <h4 className="block py-5 text-2xl font-semibold text-left text-black">
+        <div className="flex items-center justify-between px-2 bg-green-100 rounded-md ">
+          <div className="w-5/12 ">
+            <h4 className="block py-3 text-2xl font-semibold text-left text-black">
               {name && (
                 <div>
                   Sales People Under
@@ -69,7 +69,7 @@ export default function SellerList(props) {
               {!name && <>Manage Sales People</>}
             </h4>
           </div>
-          <div className="flex items-center justify-start w-4/12 px-3 bg-white border rounded-md">
+          <div className="flex items-center justify-start w-4/12 px-3 bg-white rounded-md">
             <Search className=" text-primary size-5" />
             <input
               type="text"
@@ -80,66 +80,76 @@ export default function SellerList(props) {
             />
           </div>
         </div>
-        <div className="grid grid-cols-4 gap-4 mt-4 mb-10">
-          {usersToDisplay.map((user, index) => (
-            <div
-              className="p-5 bg-white border rounded-md singleSales"
-              key={user.id || index}
-            >
-              <div className="flex items-center">
-                <div className="pr-4 thumb">
-                  {user.avatar ? (
-                    <Image
-                      className="rounded-full"
-                      src={user?.avatar}
-                      width={50}
-                      height={50}
-                      alt={""}
-                    />
-                  ) : (
-                    <Image
-                      className="rounded-full"
-                      src="/glix.jpg"
-                      width={50}
-                      height={50}
-                      alt={""}
-                    />
-                  )}
-                </div>
-                <div className="leading-[10px]">
-                  <h4 className="text-xl font-semibold text-left">
-                    <Link className="capitalize" href={"/sales/" + user.name}>
-                      {user.name}
-                    </Link>
-                  </h4>
-                  <h6 className="text-sm">{user.email}</h6>
-                </div>
+        <div className="mt-5 rounded-md ">
+        {usersToDisplay?.length>0 &&
+        <div className="grid grid-cols-4 gap-4 p-2 mb-10 ">
+        {usersToDisplay.map((user, index) => (
+          <div
+            className="p-5  rounded-md singleSales bg-green-100   min-w-[300px]"
+            key={user.id || index}
+          >
+            <div className="flex items-center">
+              <div className="pr-4 thumb">
+                {user.avatar ? (
+                  <Image
+                    className="rounded-full"
+                    src={user?.avatar}
+                    width={50}
+                    height={50}
+                    alt={""}
+                  />
+                ) : (
+                  <Image
+                    className="rounded-full"
+                    src="/glix.jpg"
+                    width={50}
+                    height={50}
+                    alt={""}
+                  />
+                )}
               </div>
-              <div className="flex justify-between pt-5">
-                <div className="w-6/12 p-2 mr-1 text-left bg-gray-100 rounded-md">
-                  <h1 className="text-2xl font-semibold">
-                    {user._id && <TotalSales userId={user._id} />}
-                  </h1>
-                  <span className="text-[11px] font-semibold">
-                    Sales person
-                  </span>
-                </div>
-                <div className="w-6/12 p-2 ml-1 text-left bg-gray-100 rounded-md">
-                  <h1 className="text-2xl font-semibold">
-                    {user._id && <TotalEarning userId={user._id} />}
-                  </h1>
-                  <span className="text-[11px] font-semibold">Earnings</span>
-                </div>
-                <div className="w-6/12 p-2 ml-1 text-left bg-gray-100 rounded-md">
-                  <h1 className="text-2xl font-semibold">
-                    <UpsellerCommission id={user._id} />
-                  </h1>
-                  <span className="text-[11px] font-semibold">Commission</span>
-                </div>
+              <div className="leading-[10px]">
+                <h4 className="text-xl font-semibold text-left">
+                  <Link className="capitalize" href={"/sales/" + user.name}>
+                    {user.name}
+                  </Link>
+                </h4>
+                <h6 className="text-sm">{user.email}</h6>
               </div>
             </div>
-          ))}
+            <div className="flex justify-between pt-5 ">
+              <div className="w-6/12 p-2 mr-1 text-left bg-white bg-orange-100 border rounded-md">
+                <h1 className="text-2xl font-semibold bg-white rounded-md">
+                  {user._id && <TotalSales userId={user._id} />}
+                </h1>
+                <span className="text-[11px] w-full m-auto text-center inline-block  font-semibold">
+                  Sales person
+                </span>
+              </div>
+              <div className="w-6/12 p-2 ml-1 text-left bg-white bg-orange-100 border rounded-md">
+                <h1 className="m-auto text-2xl font-semibold bg-white rounded-md">
+                  {user._id && <TotalEarning userId={user._id} />}
+                </h1>
+                <span className="text-[11px] text-center w-full inline-block font-semibold">Earnings</span>
+              </div>
+              <div className="w-6/12 p-2 ml-1 text-left bg-white bg-orange-100 border rounded-md">
+                <h1 className="text-2xl font-semibold bg-white rounded-md">
+                  <UpsellerCommission id={user._id} />
+                </h1>
+                <span className="text-[11px] w-full inline-block font-semibold text-center m-auto">Commission</span>
+              </div>
+            </div>
+          </div>
+        ))}
+        
+      </div>}
+        
+        {usersToDisplay?.length<=0 &&
+        <div className='flex items-center justify-center w-full m-auto rounded-md'>
+          <p className='m-auto text-sm'>No Result</p>
         </div>
+          }
+          </div>
         <div>
           {filteredUsers.length > postsPerPage && (
             <div className="pt-5 pb-10 text-right" key={filteredUsers.length}>

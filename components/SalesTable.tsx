@@ -1,5 +1,5 @@
 "use client"
-
+import { Eye } from 'lucide-react';
 import * as React from "react"
 import { useState } from "react"
 import Image from "next/image"
@@ -132,14 +132,14 @@ const columns: ColumnDef<Projects>[] = [
     accessorKey: "",
     header: "Actions",
     cell: ({ row }) => (
-      <div className="capitalize">
+      <Button size="sm" varient="default" className="capitalize">
         <div
-          className="px-5 py-1 text-center text-white duration-300 rounded-full cursor-pointer bg-primary hover:bg-black"
+          className=""
           onClick={() => handleSalesRowClick(row.getValue("name"))}
         >
-          Manage
+          <Eye className="cursor-pointer"/>
         </div>
-      </div>
+      </Button>
     ),
   },
 ]
@@ -178,7 +178,7 @@ export default function SalesTable(props) {
     <>
       <div>
         <Table className="w-full border-separate dataTable caption-bottom border-spacing-y-2">
-          <TableHeader className="bg-transparent">
+          <TableHeader className="bg-green-100">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
@@ -200,7 +200,7 @@ export default function SalesTable(props) {
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
                 <TableRow
-                  className="border-color-[#E9EFF4] overflow-hidden rounded-md border shadow-md"
+                  className="border-color-[#E9EFF4] overflow-hidden rounded-md border"
                   key={row.id}
                   data-state={row.getIsSelected()}
                 >
@@ -227,7 +227,7 @@ export default function SalesTable(props) {
           </TableBody>
         </Table>
       </div>
-      <div className="flex items-center justify-end py-4 space-x-2">
+     {data?.length>10 && <div className="flex items-center justify-end py-4 space-x-2">
         <div className="flex-1 text-sm text-muted-foreground"></div>
         <div className="space-x-2">
           <Button
@@ -249,7 +249,7 @@ export default function SalesTable(props) {
             Next
           </Button>
         </div>
-      </div>
+      </div>}
     </>
   )
 }

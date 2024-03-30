@@ -45,7 +45,7 @@ export default function AddInvoice(props) {
   const [isLoading, setLoading] = useState(false)
   let [invoiceDate, setinvoiceDate] = useState("")
   const [amount, setAmount] = useState("")
-console.log(upsellerId)
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     setLoading(true)

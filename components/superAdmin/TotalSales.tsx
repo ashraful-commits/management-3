@@ -14,5 +14,5 @@ export default function TotalSales(props) {
       })
   }, [userId])
 
-  return <div>{totalSales && totalSales}</div>
+  return <div className="flex items-center justify-center w-full border rounded-md">{totalSales && totalSales}</div>
 }

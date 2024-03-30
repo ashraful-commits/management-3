@@ -21,7 +21,7 @@ const ListComponent = (props: any) => {
   }, [highLightRef])
 
   return (
-    <div className="w-full p-10 mb-20 bg-white border rounded-md shadow-md ">
+    <div className="w-full p-10 mb-5 bg-white rounded-md ">
       {/* {props.level && (
         <h2 id={props.level} className="font-bold text-[24px]">
           {props.level}
@@ -30,11 +30,11 @@ const ListComponent = (props: any) => {
 
       <ol className="w-full list-inside">
         <li ref={highLightRef} id={props.title} className="w-full">
-          <Link className="font-[600] text-xl" href="#">
-            <span className="inline-block mr-2">{props.id}.</span>
+          <Link className="font-[600] text-xl text-orange-500" href="#">
+            <span className="inline-block mr-2 text-orange-500">{props.id}.</span>
             {props.title}
           </Link>
-          <div className="flex items-center justify-center w-full my-5">
+          <div className="flex items-center justify-start w-full my-5">
             <iframe
               width="560"
               height="315"
@@ -45,13 +45,13 @@ const ListComponent = (props: any) => {
           </div>
           <ul className="ml-5 list-inside">
             <li>
-              <span className="inline-block font-[500] mr-1 ">
+              <span className="inline-block  text-green-500 font-[500] mr-1 ">
                 Importance :
               </span>{" "}
               {props.importance}
             </li>
             <li>
-              <span className="inline-block font-[500] mr-1 ">
+              <span className="inline-block font-[500] mr-1 text-green-500 ">
                 Action Steps:
               </span>
               <ul className="ml-5 list-disc list-inside list">

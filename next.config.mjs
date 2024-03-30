@@ -12,6 +12,11 @@ const nextConfig = {
         hostname: "res.cloudinary.com",
         pathname: "**",
       },
+      {
+        protocol: "http",
+        hostname: "res.cloudinary.com",
+        pathname: "**",
+      },
     ],
   },
 
@@ -22,13 +27,7 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  experimental: {
-    // serverComponentsExternalPackages: [
-    //   "@react-email/components",
-    //   "@react-email/render",
-    //   "@react-email/html",
-    // ],
-  },
+  experimental: {},
   transpilePackages: [
     "@react-email/components",
     "@react-email/render",

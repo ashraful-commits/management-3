@@ -269,7 +269,7 @@ export default function EditUser(props) {
                     <Input
                       className="mb-5"
                       type="text"
-                      defaultValue="Image Appeal"
+                      defaultValue="compan"
                       onChange={(e) => setadminCompany(e.target.value.trim())}
                     />
                   </>

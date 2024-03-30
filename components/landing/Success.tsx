@@ -3,7 +3,7 @@ import React from "react"
 export default function Success() {
   return (
     <div className="success_wrap bg-[#141F39] pb-[50px] pt-[40px] text-center md:pt-[50px]">
-      <div className="container mx-auto px-5">
+      <div className="px-5 mx-auto container-fluid luid">
         <div className="success pb-7 pt-8 text-[#fff]">
           <div className="col-span-10 pr-[0px] font-medium lg:col-span-5">
             <p className="text-sm uppercase text-[#267596]">Success Numbers</p>
@@ -15,7 +15,7 @@ export default function Success() {
               use of data-driven evidence and statistics to measure the impact
               of performance, progress, and success
             </p>
-            <div className="mt-5 grid grid-cols-8 gap-4">
+            <div className="grid grid-cols-8 gap-4 mt-5">
               <div className="col-span-8 sm:col-span-4 lg:col-span-2">
                 <h3 className="mt-5 text-[30px] font-semibold md:text-[36px] lg:text-[48px]">
                   90 <span className="text-[#267596]">%</span>

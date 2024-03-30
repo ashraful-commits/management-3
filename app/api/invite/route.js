@@ -22,15 +22,15 @@ export async function POST(req) {
 
       const initialContractsData = [
         {
-          companyName: "WordSphere",
+          companyName: "company1",
           rate: 20 - upsellerPercentage, // Now upsellerPercentage is defined
-          logo: "/wordsphere.png",
+          logo: "/logo.jpg",
           companyType: "Web Development Agency",
         },
         {
-          companyName: "image appeal",
+          companyName: "company2",
           rate: 20 - upsellerPercentage, // Now upsellerPercentage is defined
-          logo: "/ia.png",
+          logo: "/ia.jpg",
           companyType: "Graphics Design Agency",
         },
       ]

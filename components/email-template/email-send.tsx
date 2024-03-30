@@ -21,7 +21,7 @@ interface RaycastMagicLinkEmailProps {
   subject: string
 }
 
-const baseUrl = "http://salesfam.com"
+const baseUrl = "http://localhost:8000"
 
 export const RaycastMagicLinkEmail = ({
   salesPerson: salesPerson,
@@ -31,14 +31,14 @@ export const RaycastMagicLinkEmail = ({
 }: RaycastMagicLinkEmailProps) => (
   <Html>
     <Head />
-    <Preview>Unleash Your Sales Potential with Sales Fam.</Preview>
+    <Preview>Unleash Your Sales Potential with Client Management.</Preview>
     <Body style={main}>
-      <Container style={container}>
+      <Container style={container-fluid}>
         <Img
           src={`${baseUrl}/logo.png`}
           width={120}
           height={60}
-          alt="Sales Fam"
+          alt="Client Management"
         />
         <Heading style={heading}>{subject}</Heading>
         <Section style={body}>
@@ -48,20 +48,20 @@ export const RaycastMagicLinkEmail = ({
             <b>Commission rate: </b> {rate}
           </Text>
         </Section>
-        <Text style={paragraph}>SalesFam Team</Text>
+        <Text style={paragraph}>Client Mangement Team</Text>
         <Hr style={hr} />
         <Img
           src={`${baseUrl}/logo.png`}
           width={80}
           height={42}
-          alt="Sales Fam"
+          alt="Client Management"
           style={{
             WebkitFilter: "grayscale(100%)",
             filter: "grayscale(100%)",
             margin: "20px 0",
           }}
         />
-        <Text style={footer}>Sales Fam</Text>
+        <Text style={footer}>Client Management</Text>
         <Text style={footer}>2010-2024 All Rights Reserved</Text>
       </Container>
     </Body>

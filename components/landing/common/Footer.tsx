@@ -41,9 +41,9 @@ export default function Footer() {
                   <p className="text-[#ffffff99]">Email Us</p>
                   <Link
                     className="inline-block text-[18px] text-[#267596] transition hover:text-[#fff]"
-                    href="mailto:info@salesfam.com"
+                    href="mailto:info@localhost:8000"
                   >
-                    info@salesfam.com
+                    info@localhost:8000
                   </Link>
                 </li>
               </ul>
@@ -254,7 +254,7 @@ export default function Footer() {
             </div>
             <div className="col-span-10 text-center md:col-span-5 md:text-right">
               <p className="text-sm text-[#ffffff99]">
-                © 2010-2024 SalesFam - All Rights Reserved.
+                © 2010-2024 clientManagement - All Rights Reserved.
               </p>
             </div>
           </div>

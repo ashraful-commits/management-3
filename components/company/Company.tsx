@@ -35,8 +35,8 @@ const Company = (props) => {
         <CompanySkeleton />
       ) : (
         <>
-          <div className="container">
-            <div className="flex items-center p-5 bg-white border rounded-md shadow-md">
+          <div className="container-fluid">
+            <div className="flex items-center p-5 bg-white border rounded-md ">
               <div className="w-2/12 ">
                 <Image
                   width={500}
@@ -75,7 +75,7 @@ const Company = (props) => {
                 <div className="flex gap-x-3">
                   <Link
                     target="blank"
-                    className="inline-block p-2 overflow-hidden transition-all duration-500 ease-in-out border rounded-full hover:bg-black bg-primary"
+                    className="inline-block p-2 overflow-hidden transition-all duration-500 ease-in-out bg-orange-500 border rounded-full hover:bg-black"
                     href={
                       data?.socialLink?.facebook
                         ? data?.socialLink?.facebook
@@ -86,7 +86,7 @@ const Company = (props) => {
                   </Link>
                   <Link
                     target="blank"
-                    className="inline-block p-2 overflow-hidden transition-all duration-500 ease-in-out border rounded-full hover:bg-black bg-primary"
+                    className="inline-block p-2 overflow-hidden transition-all duration-500 ease-in-out bg-orange-500 border rounded-full hover:bg-black"
                     href={
                       data?.socialLink?.instagram
                         ? data?.socialLink?.instagram
@@ -97,7 +97,7 @@ const Company = (props) => {
                   </Link>
                   <Link
                     target="blank"
-                    className="inline-block p-2 overflow-hidden transition-all duration-500 ease-in-out border rounded-full hover:bg-black bg-primary"
+                    className="inline-block p-2 overflow-hidden transition-all duration-500 ease-in-out bg-orange-500 border rounded-full hover:bg-black"
                     href={
                       data?.socialLink?.twitter
                         ? data?.socialLink?.twitter
@@ -108,7 +108,7 @@ const Company = (props) => {
                   </Link>
                   <Link
                     target="blank"
-                    className="inline-block p-2 overflow-hidden transition-all duration-500 ease-in-out border rounded-full hover:bg-black bg-primary"
+                    className="inline-block p-2 overflow-hidden transition-all duration-500 ease-in-out bg-orange-500 border rounded-full hover:bg-black"
                     href={
                       data?.socialLink?.linkedin
                         ? data?.socialLink?.linkedin
@@ -120,7 +120,7 @@ const Company = (props) => {
                 </div>
               </div>
               <div className="flex self-start justify-end w-4/12 h-full gap-x-4">
-                <button className="px-5 py-2 font-[400] text-white transition-all duration-500 ease-in-out rounded-full hover:bg-black bg-primary ">
+                <button className="px-5 py-2 font-[400] text-white transition-all duration-500 ease-in-out rounded-full hover:bg-black bg-orange-500 ">
                   Download Contact
                 </button>
                 <button className="px-5 py-2 font-[400] text-white transition-all duration-500 ease-in-out bg-black rounded-full hover:bg-red-500">
@@ -129,31 +129,31 @@ const Company = (props) => {
               </div>
             </div>
           </div>
-          <div className="container">
+          <div className="container-fluid">
             <div className="flex flex-col items-start w-full mt-5 rounded-md ">
-              <Tabs className="w-full" defaultValue="overview">
-                <TabsList className="grid  grid-cols-3 bg-white border w-[500px] rounded-md shadow-md ">
+              <Tabs className="flex justify-start w-full gap-x-5" defaultValue="overview">
+                <TabsList className="flex flex-col justify-start items-start mt-2 p-4 bg-white border min-h-[500px] w-[250px]  rounded-md  ">
                   <TabsTrigger
-                    className="flex items-center justify-center font-semibold text-center "
+                    className="flex items-center justify-center w-full font-semibold text-center "
                     value="overview"
                   >
                     Overview
                   </TabsTrigger>
                   <TabsTrigger
-                    className="flex items-center justify-center font-semibold text-center "
+                    className="flex items-center justify-center w-full font-semibold text-center "
                     value="training"
                   >
                     Training
                   </TabsTrigger>
                   <TabsTrigger
-                    className="flex items-center justify-center font-semibold text-center "
+                    className="flex items-center justify-center w-full font-semibold text-center "
                     value="marketing material"
                   >
-                    Marketing material
+                    Marketing Tools
                   </TabsTrigger>
                 </TabsList>
                 <TabsContent
-                  className="w-full h-full p-5 mt-5 min-h-[470px] bg-white border rounded-md shadow-md "
+                  className="w-full h-full p-5  min-h-[500px] bg-white border rounded-md  "
                   value="overview"
                 >
                   <h2 className="mb-2 text-2xl font-semibold capitalize">
@@ -162,7 +162,7 @@ const Company = (props) => {
                   <p>{data && data.overview}</p>
                 </TabsContent>
                 <TabsContent
-                  className="w-full h-full p-5 mt-5 min-h-[470px] bg-white border rounded-md shadow-md"
+                  className="w-full h-full p-5  min-h-[500px] bg-white border rounded-md "
                   value="training"
                 >
                   <h2 className="mb-2 text-2xl font-semibold capitalize">
@@ -170,11 +170,11 @@ const Company = (props) => {
                   </h2>
                 </TabsContent>
                 <TabsContent
-                  className="w-full h-full p-5 mt-5 min-h-[470px] bg-white border rounded-md shadow-md"
+                  className="w-full h-full p-5  min-h-[500px] bg-white border rounded-md "
                   value="marketing material"
                 >
                   <h2 className="mb-2 text-2xl font-semibold capitalize">
-                    marketing material
+                    marketing Tools
                   </h2>
                 </TabsContent>
               </Tabs>

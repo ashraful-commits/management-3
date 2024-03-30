@@ -43,17 +43,18 @@ export default function MeetingList() {
     <>
       {isLoading && <MeetingSkeleton />}
       <div className="mt-5">
-        <ScrollArea className="w-full h-[900px] pb-[100px]">
+        <ScrollArea className="w-full">
           {meetingList &&
             meetingList.map((singleMeeting, index) => (
-              <div key={index} className="flex items-center min-h-[250px] justify-start w-full p-10 bg-white border rounded-md gap-x-4">
+              <div key={index} className="flex items-center justify-start w-full p-2 bg-white border rounded-md gap-x-4">
                 <Link
                   className="flex items-center justify-start w-full gap-x-4"
                   href={`https://www.youtube.com/watch?v=${singleMeeting.videoId}`}
                 >
                   <div className="flex">
                     <img
-                      className="rounded-md"
+                    
+                      className="rounded-md w-14"
                       src={`https://img.youtube.com/vi/${singleMeeting.videoId}/mqdefault.jpg`}
                       alt=""
                     />
@@ -65,7 +66,7 @@ export default function MeetingList() {
                     </h5>
                   </div>
                 </Link>
-                <div className="ml-auto">
+                <div className="ml-auto mr-4">
                   <Button onClick={() => handleDelete(singleMeeting?._id)} className="bg-red-500">
                     <Trash2 />
                   </Button>

@@ -28,7 +28,7 @@ const getProjects = async () => {
 
   return (
     <section>
-      <div className="container">
+      <div className="container-fluid">
         <Table>
           <TableHeader>
             <TableRow className="border-none [&>*]:py-0">

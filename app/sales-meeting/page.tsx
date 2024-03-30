@@ -69,7 +69,7 @@ export default function SalesMetting() {
                       setPlay(index), setVideoId(item.videoId)
                     }}
                     className={`flex items-center p-4 rounded-md cursor-pointer border-y ${
-                      play === index && "bg-primary"
+                      play === index && "bg-orange-500"
                     }`}
                   >
                     <div className="w-4/12">

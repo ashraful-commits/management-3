@@ -89,7 +89,7 @@ export function Signinform() {
   }
 
   return (
-    <div>
+    <div className="p-5 border rounded-2xl">
       <form onSubmit={handleSubmit}>
         <div className="grid gap-2">
           <div className="grid gap-1">

@@ -58,15 +58,15 @@ const userSchema = new Schema(
       type: [contractSchema],
       default: [
         {
-          companyName: "WordSphere",
+          companyName: "company1",
           rate: 20,
-          logo: "/wordsphere.png",
+          logo: "./logo.jfif",
           companyType: "Web Development Agency",
         },
         {
-          companyName: "image appeal",
+          companyName: "company2",
           rate: 20,
-          logo: "/ia.png",
+          logo: "/ia.jpg",
           companyType: "Graphics Design Agency",
         },
       ],

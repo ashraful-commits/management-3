@@ -30,14 +30,10 @@ export default function Header() {
   }, [])
   return (
     <div
-      className={`absolute transition-all duration-500 ease-in-out left-0 z-50 w-full  header_wrap  ${
-        isScrolling
-          ? " backdrop-blur-sm top-0 bg-white bg-opacity-90 border-b  "
-          : "py-[18px]"
-      }`}
+      className={` sticky top-0 transition-all bg-green-100  container-fluid duration-500 ease-in-out left-0 z-50 w-full header_wrap `}
     >
-      <header className="w-full header ">
-        <div className="container px-5 mx-auto">
+      <header className="w-full px-4 header ">
+        <div className="px-5 mx-auto ">
           <div className="grid items-center grid-cols-10 gap-4">
             <div className="col-span-2">
               <Link className="inline-block logo  max-sm:w-[110px]" href="/">
@@ -53,7 +49,7 @@ export default function Header() {
                   <li>
                     <Link
                       className="inline-block text-lg font-normal  text-[#141F39] transition duration-300 hover:text-[#267596]"
-                      href="#why-salesfam"
+                      href="#why-clientManagement"
                     >
                       About
                     </Link>
@@ -114,9 +110,9 @@ export default function Header() {
                     <li>
                       <Link
                         className="inline-block text-lg font-normal  text-[#141F39] transition duration-300 hover:text-[#267596]"
-                        href="#why-salesfam"
+                        href="#why-clientManagement"
                       >
-                        Why Sales Fam
+                        Why Client Management
                       </Link>
                     </li>
                     <li>

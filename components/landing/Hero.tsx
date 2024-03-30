@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <div className="hero_wrap ">
       <div className="hero_area bg-[url('./../public/landing/hero_bg.svg')] bg-cover bg-center pb-[170px] pt-[100px] text-center sm:pt-[130px] md:pt-[180px]">
-        <div className="container px-5 mx-auto">
+        <div className="container-fluid  px-5 mx-auto">
           <div className="hero_top mx-auto max-w-[800px]">
             <h1 className="mb-6 text-[30px] font-bold leading-[1.2] sm:text-[40px] lg:text-[60px]">
               Unleash Your Sales Potential with{" "}
@@ -39,7 +39,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <div className="container px-5 mx-auto text-center">
+      <div className="container-fluid  px-5 mx-auto text-center">
         <img
           className="mt-[-140px] inline-block pb-5 sm:pb-0"
           src="./landing/hero_img.svg"

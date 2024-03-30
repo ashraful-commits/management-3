@@ -26,5 +26,5 @@ export default function TotalEarning(props) {
     return <span className="text-2xl font-semibold">0</span>
   }
 
-  return <div>{formatNumber(invoices?.toFixed(1))}</div>
+  return <div className="w-full border rounded-md flex justify-center items-center">{formatNumber(invoices?.toFixed(1))}</div>
 }

@@ -35,11 +35,11 @@ export default function Header() {
   }, [])
   // z-[99999999] border-b sticky pb-0 pt-1   transition-all duration-500 ease-in-out top-0bg-white bg-opacity-90 backdrop-blur-sm ${isScrolling?" ":""}
   return (
-    <header className={` min-w-[1400px] py-6`}>
-      <div className="container flex items-center">
+    <header className={`min-w-[1536px] bg-green-100  py-0`}>
+      <div className="flex items-center container-fluid">
         <div className="w-4/12">
-          <Link href="/dashboard" className="inline-block pt-1">
-            <Image src="/logo.png" alt="Logo" width="120" height="102" />
+          <Link href="/" className="inline-block pt-1">
+            <Image  className="rounded-full" src="/logo.jpg" alt="Logo" width="50" height="50" />
           </Link>
         </div>
         <div className="flex items-center justify-end w-8/12">
@@ -48,23 +48,14 @@ export default function Header() {
               <li>
                 <Link
                   className={`flex items-center justify-center p-2 ${
-                    pathname == "/dashboard" ? "font-bold" : ""
+                    pathname == "/" ? "font-bold" : ""
                   }`}
-                  href="/dashboard"
+                  href="/"
                 >
-                  Dashboard
+                  Home
                 </Link>
               </li>
-              <li>
-                <Link
-                  className={`flex items-center justify-center p-2 ${
-                    pathname == "/contracts" ? "font-bold" : ""
-                  }`}
-                  href="/contracts"
-                >
-                  Contracts
-                </Link>
-              </li>
+              
               <li>
                 <Link
                   className={`flex items-center justify-center p-2 ${
@@ -72,19 +63,10 @@ export default function Header() {
                   }`}
                   href="/training"
                 >
-                  Training
+                  Saller Training
                 </Link>
               </li>
-              {/* <li>
-                <Link
-                  className={`flex items-center justify-center p-2 ${
-                    pathname == "/sales-meeting" ? "font-bold" : ""
-                  }`}
-                  href="/sales-meeting"
-                >
-                  Sales Meeting
-                </Link>
-              </li> */}
+              
             </ul>
           )}
 

@@ -15,9 +15,8 @@ interface PasswordResetRequestProps {
   mainEmail: string
 }
 
-const company = "SalesFam"
-// const baseUrl = "http://localhost:8080"
-const baseUrl = "https://salesfam.com"
+const company = "Manage-client"
+const baseUrl = "https://localhost:8000"
 
 export const PasswordResetRequest: React.FC<PasswordResetRequestProps> = ({
   salesName,
@@ -26,7 +25,7 @@ export const PasswordResetRequest: React.FC<PasswordResetRequestProps> = ({
   <Html>
     <Head />
     <Body style={main}>
-      <Container style={container}>
+      <Container style={container - fluid}>
         <Img
           src={`${baseUrl}/logo.png`}
           width={120}

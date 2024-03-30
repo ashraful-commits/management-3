@@ -10,124 +10,119 @@ export default function TrainingPage() {
   const salesSkillsArray = [
     // Beginner Level
     {
-      level: "Beginner Level: Building Strong Foundations",
-      title: "The Power of Connection",
-      video: "https://www.youtube.com/embed/yyJm5IRYGgE?si=p40eMbmMEL9a-5si",
-      importance: "Genuine connections are the bedrock of successful sales.",
+      level: "Foundational Level: Establishing Strong Groundwork",
+      title: "The Art of Establishing Connections",
+      video: "https://www.youtube.com/embed/ABC123?si=22L4QsXh0awsLbrX",
+      importance: "Establishing genuine connections is fundamental for successful sales endeavors.",
       actionSteps: [
-        "Attend team-building events and get to know your colleagues.",
-        "Practice active listening during conversations with clients and team members.",
+        "Participate in team-building activities to foster camaraderie with colleagues.",
+        "Practice active listening during conversations to understand clients' needs effectively.",
       ],
     },
     {
       level: "",
-      title: "Networking 101",
-      video: "https://www.youtube.com/embed/TGbUpEJ1z-k?si=22L4QsXh0awsLbrX",
-      importance:
-        "Expanding your professional network opens doors to opportunities.",
+      title: "Essentials of Networking",
+      video: "https://www.youtube.com/embed/DEF456?si=22L4QsXh0awsLbrX",
+      importance: "Expanding your professional network is pivotal for unlocking new opportunities.",
       actionSteps: [
-        "Attend industry events and engage with fellow professionals.",
-        "Utilize LinkedIn to connect with potential clients and industry leaders.",
+        "Attend industry events to connect with peers and industry leaders.",
+        "Utilize LinkedIn to cultivate relationships with potential clients and thought leaders.",
       ],
     },
     {
       level: "",
-      title: "Celebrate Small Wins",
-      video: "https://www.youtube.com/embed/TGbUpEJ1z-k?si=22L4QsXh0awsLbrX",
-      importance: "Recognizing achievements boosts morale and motivation.",
+      title: "Acknowledging Milestones",
+      video: "https://www.youtube.com/embed/GHI789?si=22L4QsXh0awsLbrX",
+      importance: "Recognizing achievements fosters a culture of excellence and motivation.",
       actionSteps: [
-        "Share successes, no matter how small, during team meetings.",
-        "Foster a positive team culture by acknowledging individual and team accomplishments.",
+        "Celebrate individual and team successes during meetings to boost morale.",
+        "Implement a rewards system to incentivize and acknowledge outstanding performance.",
       ],
     },
-    // inter midiate Level
+    // Intermediate Level
     {
-      level: "Intermediate Level: Elevating Performance",
-      title: "Deep Dive into Product Knowledge",
-      video: "https://www.youtube.com/embed/TGbUpEJ1z-k?si=22L4QsXh0awsLbrX",
-      importance:
-        "Knowing your product inside out builds confidence and credibility.",
+      level: "Intermediate Level: Advancing Performance",
+      title: "In-Depth Product Familiarization",
+      video: "https://www.youtube.com/embed/JKL012?si=22L4QsXh0awsLbrX",
+      importance: "Comprehensive product knowledge enhances credibility and confidence.",
       actionSteps: [
-        "Participate in product training sessions and workshops.",
-        "Continuously update your knowledge as products evolve.",
-      ],
-    },
-    {
-      level: "",
-      title: "Master the Art of Presentation",
-      video: "https://www.youtube.com/embed/TGbUpEJ1z-k?si=22L4QsXh0awsLbrX",
-      importance:
-        "A compelling presentation showcases the value of your product.",
-      actionSteps: [
-        "Practice delivering polished and engaging presentations.",
-        "Seek feedback from colleagues and mentors to refine your presentation skills.",
+        "Participate in advanced product training sessions to deepen understanding.",
+        "Stay abreast of industry developments to provide informed solutions to clients.",
       ],
     },
     {
       level: "",
-      title: "Sharpen Negotiation Skills",
-      video: "https://www.youtube.com/embed/TGbUpEJ1z-k?si=22L4QsXh0awsLbrX",
-      importance:
-        "Effective negotiation leads to mutually beneficial outcomes.",
+      title: "Mastering Presentation Techniques",
+      video: "https://www.youtube.com/embed/MNO345?si=22L4QsXh0awsLbrX",
+      importance: "Compelling presentations effectively convey the value proposition and engage the audience.",
       actionSteps: [
-        "Study negotiation techniques and strategies.",
-        "Role-play scenarios to hone your negotiation skills.",
+        "Refine presentation skills through practice and feedback from peers.",
+        "Tailor presentations to resonate with specific audience demographics and interests.",
       ],
     },
     {
       level: "",
-      title: "Collaborate for Success",
-      video: "https://www.youtube.com/embed/TGbUpEJ1z-k?si=22L4QsXh0awsLbrX",
-      importance: "Team collaboration amplifies overall performance.",
+      title: "Refining Negotiation Skills",
+      video: "https://www.youtube.com/embed/PQR678?si=22L4QsXh0awsLbrX",
+      importance: "Effective negotiation drives mutually beneficial agreements and fosters trust.",
       actionSteps: [
-        "Actively participate in team projects and initiatives.",
-        "Foster a collaborative environment by sharing insights and best practices.",
+        "Study negotiation tactics and strategies to navigate complex discussions.",
+        "Role-play negotiation scenarios to develop confidence and adaptability.",
       ],
     },
-    // advance Level
+    {
+      level: "",
+      title: "Fostering Collaborative Relationships",
+      video: "https://www.youtube.com/embed/STU901?si=22L4QsXh0awsLbrX",
+      importance: "Collaboration amplifies collective performance and fosters innovation.",
+      actionSteps: [
+        "Engage in cross-functional collaboration to leverage diverse expertise.",
+        "Establish open channels of communication to encourage idea sharing and feedback.",
+      ],
+    },
+    // Advanced Level
     {
       level: "Advanced Level: Mastery and Leadership",
-      title: "Embrace Strategic Thinking",
-      video: "https://www.youtube.com/embed/TGbUpEJ1z-k?si=22L4QsXh0awsLbrX",
-      importance: "Strategic planning guides long-term success.",
+      title: "Strategic Planning and Analysis",
+      video: "https://www.youtube.com/embed/VWX234?si=22L4QsXh0awsLbrX",
+      importance: "Strategic thinking guides long-term success and competitive advantage.",
       actionSteps: [
-        "Analyze market trends and competitor strategies.",
-        "Contribute strategic insights during team discussions.",
+        "Analyze market trends and competitor strategies to inform strategic decisions.",
+        "Encourage innovation and forward-thinking within the organization.",
       ],
     },
     {
       level: "",
-      title: "Executive-Level Communication",
-      video: "https://www.youtube.com/embed/TGbUpEJ1z-k?si=22L4QsXh0awsLbrX",
-      importance:
-        "Effectively communicate with decision-makers for impactful sales.",
+      title: "Effective Executive Communication",
+      video: "https://www.youtube.com/embed/YZA567?si=22L4QsXh0awsLbrX",
+      importance: "Clear and concise communication with executives is crucial for driving impactful sales.",
       actionSteps: [
-        "Craft clear and concise messages tailored to executive audiences.",
-        "Seek mentorship on executive communication skills.",
+        "Craft tailored messages that resonate with executive priorities and concerns.",
+        "Seek mentorship from seasoned leaders to enhance executive communication skills.",
       ],
     },
     {
       level: "",
-      title: "Mentorship and Leadership",
-      video: "https://www.youtube.com/embed/TGbUpEJ1z-k?si=22L4QsXh0awsLbrX",
-      importance:
-        "Elevate others and contribute to a culture of continuous learning.",
+      title: "Mentorship and Leadership Development",
+      video: "https://www.youtube.com/embed/BCD890?si=22L4QsXh0awsLbrX",
+      importance: "Mentorship cultivates talent and fosters a culture of continuous growth and development.",
       actionSteps: [
-        "Offer mentorship to junior colleagues.",
-        "Lead by example, fostering a culture of collaboration and growth.",
+        "Provide guidance and support to junior colleagues to nurture their professional growth.",
+        "Lead by example, embodying leadership qualities and promoting teamwork and collaboration.",
       ],
     },
     {
       level: "",
-      title: "Master the Artistry of Closing Deals",
-      video: "https://www.youtube.com/embed/TGbUpEJ1z-k?si=22L4QsXh0awsLbrX",
-      importance: "Closing high-stakes deals requires finesse and expertise.",
+      title: "Advanced Deal Closure Strategies",
+      video: "https://www.youtube.com/embed/EFG123?si=22L4QsXh0awsLbrX",
+      importance: "Expert deal closure techniques are essential for securing high-value agreements.",
       actionSteps: [
-        "Study successful deal closures, learning from both successes and challenges.",
-        "Continuously refine your approach, incorporating insights from experienced peers.",
+        "Analyze successful deal closures to identify effective strategies and best practices.",
+        "Collaborate with interdisciplinary teams to address client needs comprehensively and strategically.",
       ],
     },
-  ]
+  ];
+
   const [active, setActive] = useState("")
   const [top, setTop] = useState(false)
   const handleScroll = () => {
@@ -152,11 +147,11 @@ export default function TrainingPage() {
     });
   };
   return (
-    <div className="container relative min-h-[100vh] z-0">
-      <div className="flex min-w-[1400px]">
-        <div className="relative flex w-full min-h-screen">
-          <div className="w-full h-full pr-10 mb-10">
-            <div>
+    <div className="container-fluid  relative min-h-[100vh] z-0">
+      <div className="flex min-w-[1536px]">
+        <div className="relative flex w-full min-h-screen mt-5 top-[10%]">
+          <div className="w-full h-full pl-10 mb-10">
+            <div className="">
               {salesSkillsArray.map((item, index) => {
                 return (
                   <ListComponent
@@ -174,15 +169,15 @@ export default function TrainingPage() {
             </div>
           </div>
           {/* //============================left sidebar  */}
-          <div className="w-[480px] h-[100vh] sticky top-[12%] right-0">
-            <ul className="min-h-screen p-8 bg-white border rounded-md shadow-md">
+          <div className="w-[480px] h-[80vh] sticky top-[10%] right-0">
+            <ul className="min-h-full p-8 bg-white border-l-2 ">
               {salesSkillsArray.map((item, index) => (
                 <div key={index}>
                   <li
                     className={
                       item.level !== ""
-                        ? "mt-5 font-bold text-[16px] hover:text-primary hover:font-bold transition-all duration-500 ease-in-out first:mt-0"
-                        : ""
+                        ? "mt-5 font-bold text-[16px] hover:text-orange-500 hover:font-bold transition-all duration-500 ease-in-out first:mt-0"
+                        : "text-orange-500"
                     }
                   >
                     <Link href={`#${item.title}`}>{item.level}</Link>
@@ -190,9 +185,9 @@ export default function TrainingPage() {
                   <li className={"my-2 group"}>
                     <a
                       href={`#${item.title}`}
-                      className={`flex items-start text-sm group-hover:text-primary hover:font-bold hover:pl-2 transition-all duration-500 ease-in-out gap-x-2 ${
+                      className={`flex items-start text-sm group-hover:text-orange-500 hover:font-bold hover:pl-2 transition-all duration-500 ease-in-out gap-x-2 ${
                         active === item.title
-                          ? "text-primary font-bold pl-2 underline"
+                          ? "text-orange-500 font-bold pl-2 underline"
                           : ""
                       }`}
                     >
@@ -214,7 +209,7 @@ export default function TrainingPage() {
           className="sticky bottom-5 w-9 h-9 flex border justify-center items-center ml-auto bg-white shadow-md rounded-full z-[999]"
           onClick={scrollToTop}
         >
-          <ChevronUp   className="text-white transition-all duration-500 ease-in-out rounded-full hover:bg-white size-8 bg-primary hover:text-primary" />
+          <ChevronUp   className="text-white transition-all duration-500 ease-in-out bg-orange-500 rounded-full hover:bg-white size-8 hover:text-primary" />
         </button>
       )}
     </div>

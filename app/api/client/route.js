@@ -14,10 +14,10 @@ export async function POST(req) {
         await req.json()
 
       await connectMongoDB()
-      const clientNameTrim =clientName?.trim()
+      const clientNameTrim = clientName?.trim()
       await Client.create({
         sellerId: salesPerson,
-        clientName:clientNameTrim,
+        clientName: clientNameTrim,
         email,
         phone,
         address,

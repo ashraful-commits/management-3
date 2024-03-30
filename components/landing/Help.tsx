@@ -24,7 +24,7 @@ export default function Help() {
   return (
     <div className="help_wrap ">
       <div className="help_section bg-[#141F39] pb-[50px] pt-[70px] sm:pt-[100px] md:pt-[100px]">
-        <div className="container px-5 mx-auto">
+        <div className="container-fluid  px-5 mx-auto">
           {/* Video Start */}
           <div className="relative text-center video">
             {/* <div className="absolute z-50 -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2">
@@ -33,7 +33,7 @@ export default function Help() {
                   ""
                 ) : (
                   <>
-                    <div className="flex items-center justify-center text-white rounded-full size-20 bg-primary">
+                    <div className="flex items-center justify-center text-white rounded-full size-20 bg-orange-500">
                       <Play size="30" className="ml-1" />
                     </div>
                   </>

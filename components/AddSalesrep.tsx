@@ -5,14 +5,7 @@ import { useRouter } from "next/navigation"
 import { Plus } from "lucide-react"
 
 import { sendInvitation } from "@/lib/notification/sendInvitation"
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
+
 import { Slider } from "@/components/ui/slider"
 import { useToast } from "@/components/ui/use-toast"
 import { Icons } from "@/components/icons"
@@ -107,21 +100,12 @@ export default function AddSalesrep(props) {
   }
 
   return (
-    <Dialog>
-      <DialogTrigger>
-        <Button size="sm">
-          <div className="flex items-center justify-end">
-            <span className="mr-2">Add Sales Rep</span>
-            <Plus className="size-4" />
+    <div className="w-full">
+      <div className="flex items-center justify-start h-12 px-2 my-4 bg-orange-100 rounded-md">
+            <span className="text-2xl font-bold text-black">Add new sales rep under you</span>
           </div>
-        </Button>
-      </DialogTrigger>
-      <DialogContent>
-        <DialogHeader>
-          <DialogTitle>
-            <h2 className="text-2xl">Add new sales rep under you</h2>
-          </DialogTitle>
-          <DialogDescription>
+        <div>
+          <div>
             <form className="mt-2" onSubmit={handleSubmit}>
               <div className="grid gap-2">
                 <div className="grid gap-1 mb-4">
@@ -169,9 +153,9 @@ export default function AddSalesrep(props) {
                 </Button>
               </div>
             </form>
-          </DialogDescription>
-        </DialogHeader>
-      </DialogContent>
-    </Dialog>
+          </div>
+        </div>
+     
+    </div>
   )
 }
