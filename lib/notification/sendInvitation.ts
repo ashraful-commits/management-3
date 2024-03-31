@@ -9,7 +9,7 @@ export async function sendInvitation(
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: "Client Management <noreplay@localhost:8000>",
+      from: "Client Management <noreplay@management-clients.vercel.app>",
       to: [`${email}`],
       subject: "clientManagement Invitation",
       name,

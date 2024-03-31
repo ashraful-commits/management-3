@@ -41,9 +41,9 @@ export default function Footer() {
                   <p className="text-[#ffffff99]">Email Us</p>
                   <Link
                     className="inline-block text-[18px] text-[#267596] transition hover:text-[#fff]"
-                    href="mailto:info@localhost:8000"
+                    href="mailto:info@management-clients.vercel.app"
                   >
-                    info@localhost:8000
+                    info@management-clients.vercel.app
                   </Link>
                 </li>
               </ul>

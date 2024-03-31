@@ -9,7 +9,7 @@ export async function sendAdminNotification(
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: "Client Management <noreplay@localhost:8000>",
+      from: "Client Management <noreplay@management-clients.vercel.app>",
       to: [`${adminEmail}`],
       subject: "New project submited!",
       projectName,
@@ -36,7 +36,7 @@ export async function sendUserNotification(
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: "Client Management <noreplay@localhost:8000>",
+      from: "Client Management <noreplay@management-clients.vercel.app>",
       to: [`${salesPersonEmail}`],
       subject: "You submited a new project!",
       projectName,

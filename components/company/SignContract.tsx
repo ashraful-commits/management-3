@@ -53,7 +53,7 @@ export default function SignContract(props) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          from: "Client management <noreplay@localhost:8000>",
+          from: "Client management <noreplay@management-clients.vercel.app>",
           to: AdminEmail,
           subject: "Sign contract request submitted!",
           companyName,

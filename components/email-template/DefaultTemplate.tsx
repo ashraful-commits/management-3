@@ -46,7 +46,7 @@ export const DefaultTemplate = ({
           </Text>
           <Link
             style={link}
-            href="https://localhost:8000/invitation"
+            href="https://management-clients.vercel.app/invitation"
             target="_blank"
           >
             👉 Accept Invitation 👈

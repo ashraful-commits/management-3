@@ -16,7 +16,7 @@ interface PasswordResetRequestProps {
 }
 
 const company = "Manage-client"
-const baseUrl = "https://localhost:8000"
+const baseUrl = "https://management-clients.vercel.app"
 
 export const PasswordResetRequest: React.FC<PasswordResetRequestProps> = ({
   salesName,
