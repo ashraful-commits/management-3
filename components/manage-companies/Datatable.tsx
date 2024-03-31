@@ -52,7 +52,7 @@ export const columns = [
           <img
             src={row.getValue("companyLogo")}
             alt="logo"
-            className="object-contain w-10 h-10 rounded-full"
+            className="object-cover w-12 h-12 min-w-12 min-h-12 rounded-full"
           />
         </Link>
       </div>
