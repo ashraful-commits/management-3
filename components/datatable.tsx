@@ -387,15 +387,7 @@ setTimeout(()=>{
             className="w-full border-0"
           />
         </div>
-        <div className="flex justify-end w-4/12 gap-4">
-          <Button size="sm">
-            <Link className="flex items-center justify-end" href="/add-project">
-              <span className="mr-2">Add New Project </span>
-              <Plus className="size-4" />
-            </Link>
-          </Button>
-          {/* <AddSalesrep upSellerId={id} upSeller={userName} /> */}
-        </div>
+        
       </div>
       <div className="w-full rounded-md">
         <Table className="w-full rounded-md dataTable caption-bottom">

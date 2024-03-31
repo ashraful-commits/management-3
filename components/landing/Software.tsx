@@ -7,7 +7,7 @@ export default function Software() {
       className="software_wrap pb-[60px] pt-[70px] sm:pt-[100px] md:py-[100px]"
       id="solution"
     >
-      <div className="px-5 mx-auto container-fluid luid">
+      <div className="px-5 mx-auto container-fluid">
         {/* top start*/}
         <div className="grid items-center grid-cols-10 gap-4 pb-7">
           <div className="col-span-10 md:col-span-6">
