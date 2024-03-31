@@ -114,7 +114,7 @@ export default function AddProject() {
       const role = session?.user?.role
 
       fetchClients(role).then((data) => {
-        if (role !== "SuperAdmin" && role !== "Admin-IA") {
+        if (role !== "SuperAdmin" ) {
           setClients(data)
           const filterPerson = data.filter((item) => userId == item.sellerId)
           setClients(filterPerson)
@@ -137,10 +137,7 @@ export default function AddProject() {
           setsalesId(salesPerson._id)
           setupSellerId(salesPerson.upSellerId)
         }
-        if (role != "SuperAdmin" && role == "Admin-IA") {
-          setsalesId(salesPerson._id)
-          setupSellerId(salesPerson.upSellerId)
-        }
+        
       })
     }
   }, [session, salesPerson, role])
@@ -282,7 +279,7 @@ export default function AddProject() {
                   Project Name:
                 </label>
                 <input
-                  className="w-full px-4 py-2 mb-4 rounded-md bg-green-100  "
+                  className="w-full px-4 py-2 mb-4 bg-green-100 rounded-md "
                   type="text"
                   onChange={(e) => setprojectName(e.target.value.trim())}
                   placeholder="Project Name"
@@ -293,8 +290,7 @@ export default function AddProject() {
                   Sales Person:
                 </label>
 
-                {(Users && role == "SuperAdmin") ||
-                (Users && role == "Admin-IA") ? (
+                {(Users && role == "SuperAdmin") ? (
                   <div className="w-full">
                     <Popover open={open} onOpenChange={setOpen}>
                       <PopoverTrigger asChild className="w-full">
@@ -302,7 +298,7 @@ export default function AddProject() {
                           variant="outline"
                           name="combobox"
                           aria-expanded={open}
-                          className="justify-between w-full capitalize bg-green-100  "
+                          className="justify-between w-full capitalize bg-green-100 "
                         >
                           {value
                             ? Users?.find((user) => user?.name === value)?.name
@@ -351,7 +347,7 @@ export default function AddProject() {
                 ) : (
                   <>
                     <input
-                      className="w-full px-4 py-2 mb-4 rounded-md bg-green-100  "
+                      className="w-full px-4 py-2 mb-4 bg-green-100 rounded-md "
                       type="text"
                       disabled
                       onLoad={(e) => setUserId(e.target.value.trim())}
@@ -372,7 +368,7 @@ export default function AddProject() {
                   }
                   onValueChange={setcompanyName}
                 >
-                  <SelectTrigger className="w-full text-black bg-green-100  ">
+                  <SelectTrigger className="w-full text-black bg-green-100 ">
                     <SelectValue placeholder="Company Name" />
                   </SelectTrigger>
                   <SelectContent>
@@ -448,7 +444,7 @@ export default function AddProject() {
                   Budget:
                 </label>
                 <input
-                  className="w-full px-4 py-2 rounded-md bg-green-100  "
+                  className="w-full px-4 py-2 bg-green-100 rounded-md "
                   type="number"
                   onChange={(e) => setbudget(e.target.value)}
                   placeholder="Project Budget"
@@ -460,7 +456,7 @@ export default function AddProject() {
             </label>
             <Textarea
               onChange={(e) => setprojectDetails(e.target.value)}
-              className="w-full px-4 py-2 rounded-md bg-green-100  "
+              className="w-full px-4 py-2 bg-green-100 rounded-md "
             />
             <h2 className="mt-5 mb-2 text-2xl font-semibold text-primary">
               Client Information
@@ -489,7 +485,7 @@ export default function AddProject() {
                         variant="outline"
                         name="combobox"
                         aria-expanded={openClient}
-                        className="justify-between w-full capitalize bg-green-100  "
+                        className="justify-between w-full capitalize bg-green-100 "
                       >
                         {valueClient
                           ? clients.find(
@@ -547,7 +543,7 @@ export default function AddProject() {
                       Client Name:
                     </label>
                     <input
-                      className="w-full px-4 py-2 rounded-md bg-green-100  "
+                      className="w-full px-4 py-2 bg-green-100 rounded-md "
                       type="text"
                       onChange={(e) => setclientName(e.target.value)}
                       placeholder="Project Name"
@@ -558,7 +554,7 @@ export default function AddProject() {
                       Email Address:
                     </label>
                     <input
-                      className="w-full px-4 py-2 rounded-md bg-green-100  "
+                      className="w-full px-4 py-2 bg-green-100 rounded-md "
                       type="text"
                       onChange={(e) => setemail(e.target.value)}
                       placeholder="Email Address"
@@ -569,7 +565,7 @@ export default function AddProject() {
                       Phone Number:
                     </label>
                     <input
-                      className="w-full px-4 py-2 rounded-md bg-green-100  "
+                      className="w-full px-4 py-2 bg-green-100 rounded-md "
                       type="number"
                       onChange={(e) => setphone(e.target.value)}
                       placeholder="Phone Number"
@@ -581,7 +577,7 @@ export default function AddProject() {
                 </label>
                 <textarea
                   onChange={(e) => setaddress(e.target.value)}
-                  className="w-4/12 px-4 py-2 rounded-md bg-green-100  "
+                  className="w-4/12 px-4 py-2 bg-green-100 rounded-md "
                 ></textarea>
               </>
             )}

@@ -29,16 +29,10 @@ export default function ContractsPage() {
   const userDetail = (id) => {
     getUser(id).then((res: Array) => {
       setcurrentEmail(res.email)
-      console.log(res)
-      if (role == "Admin-IA") {
-        setactiveContracts(
-          res?.contracts?.filter((item) => item.companyName == "company1")
-        )
-        setcurrentUsername(res?.name)
-      } else {
+    
         setactiveContracts(res.contracts)
         setcurrentUsername(res.name)
-      }
+      
     })
   }
 

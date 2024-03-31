@@ -123,7 +123,7 @@ export default function ProjectInvoice({ slug }) {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-2">
-                {(session?.user?.role == "SuperAdmin" ||session?.user?.role == "Admin-IA") && (
+                {(session?.user?.role == "SuperAdmin") && (
                   <AddInvoice
                     projectId={data?._id}
                     rate={commission}
@@ -140,7 +140,7 @@ export default function ProjectInvoice({ slug }) {
                     <Skeleton className="w-full h-10 bg-gray-100 "/>
                     <Skeleton className="w-full h-10 bg-gray-100 "/>
                     </div>}
-                  {(session?.user?.role == "SuperAdmin" ||session?.user?.role == "Admin-IA") && invoiceData && (
+                  {(session?.user?.role == "SuperAdmin") && invoiceData && (
                     <InvoiceTable
                       rate={commission}
                       invoiceData={invoiceData?.invoices}

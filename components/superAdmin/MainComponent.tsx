@@ -16,7 +16,6 @@ const MainComponent = ({role}) => {
       <AuthProvider>
       <div className="container-fluid  mt-5 min-w-[1536px]">
         {role == "SuperAdmin" && <SuperAdmin />}
-        {role == "Admin-IA" && <AdminIA />}
         {role == "Sales1" && <SalesOne />}
         {role == "Sales2" && <SalesTwo />}
       </div>

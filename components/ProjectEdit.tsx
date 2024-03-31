@@ -134,8 +134,7 @@ export default function ProjectEdit({ slug }) {
                           </CardTitle>
                           <div className="flex items-center">
                             {(session?.user?.role == "SuperAdmin" ||
-                              session?.user?.role == "Sales1" ||
-                              session?.user?.role == "Admin-IA") && (
+                              session?.user?.role == "Sales1") && (
                               <ul className="flex items-center [&>li]:mx-1 [&>li]:cursor-pointer">
                                 <li onClick={handleToggleEdit}>
                                   <FolderEdit className="w-[20px] text-green-500" />
@@ -191,13 +190,13 @@ export default function ProjectEdit({ slug }) {
                             <Tabs defaultValue="project" className="w-full my-4">
                               <TabsList className="grid grid-cols-2 border w-[300px]">
                                 <TabsTrigger
-                                  className="flex items-center justify-center  h-8"
+                                  className="flex items-center justify-center h-8"
                                   value="project"
                                 >
                                   Project
                                 </TabsTrigger>
                                 <TabsTrigger
-                                  className="flex items-center justify-center  h-8"
+                                  className="flex items-center justify-center h-8"
                                   value="client"
                                 >
                                   Client

@@ -180,12 +180,12 @@ export default function EditUser(props) {
                       <SelectItem value="SuperAdmin">SuperAdmin</SelectItem>
                       <SelectItem value="Sales1">Sales1</SelectItem>
                       <SelectItem value="Sales2">Sales2</SelectItem>
-                      <SelectItem value="Admin-IA">Admin-IA</SelectItem>
+                     
                     </SelectContent>
                   </Select>
                 </div>
-                {console.log(Role)}
-                {Users && (Role!=="Admin-IA")&&(
+               
+                {Users &&(
                   <>
                   <label className="pb-2 text-black">Upseller:</label>
                   <div className="w-full mb-5">

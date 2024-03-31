@@ -347,7 +347,7 @@ setTimeout(()=>{
               </ScrollArea>
             </SelectContent>
           </Select>
-          {!role === "Admin-IA" ||
+          {
             (role == "SuperAdmin" && (
               <Select
                 onValueChange={(value) =>
