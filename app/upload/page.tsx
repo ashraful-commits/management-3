@@ -17,7 +17,7 @@ export default function ImageUpload() {
 
     try {
       const response = await fetch(
-        `https://api.cloudinary.com/v2/ds9mljkgj/image/upload`,
+        `https://api.cloudinary.com/v1_1/ds9mljkgj/image/upload`,
         {
           method: "POST",
           body: formData,
