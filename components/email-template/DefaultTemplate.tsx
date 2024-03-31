@@ -19,7 +19,7 @@ interface EmailPlaceholderProps {
   subject: string
 }
 
-const baseUrl = "http://localhost:8000"
+const baseUrl = "https://management-clients.vercel.app"
 
 export const DefaultTemplate = ({
   name,
